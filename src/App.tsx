@@ -1,7 +1,7 @@
 import React from 'react';
 
 import s from './App.module.css';
-import { Title } from './components/Title';
+import { Header } from './components/Header';
 
 const App: React.FC = () => {
 	return (
@@ -11,7 +11,7 @@ const App: React.FC = () => {
 					React Headers Project
 				</h1>
 			</div>
-			<Title title={'Test Title'} backgroundColor={'#4A5758'} color={'#fff'} />
+			<Header title={'Test Title'} backgroundColor={'#4A5758'} color={'#fff'} />
 		</>
 	);
 };

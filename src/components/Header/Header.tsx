@@ -8,7 +8,7 @@ interface IProps {
 	color: string,
 };
 
-export const Title = ({title, backgroundColor, color}: IProps) => {
+export const Header = ({title, backgroundColor, color}: IProps) => {
 	return (
 		<header className={s.root} style={{backgroundColor}}>
 			<h1 className={s.title} style={{color}}>
