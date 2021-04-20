@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './Title.module.css';
+import s from './Header.module.css';
 
 interface IProps {
 	title: string,
