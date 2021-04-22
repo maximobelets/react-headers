@@ -6,15 +6,15 @@ import { Header } from './components/Header';
 
 const App: React.FC = () => {
 	return (
-		<>
-			<div className={s.root}>
+		<section className={s.root}>
+			<div>
 				<h1 className={s.title}>
-					React Headers Project
+					React Components Project
 				</h1>
 			</div>
 			<Header title={'Test Title'} backgroundColor={'#4A5758'} color={'#fff'} />
 			<Button />
-		</>
+		</section>
 	);
 };
 
