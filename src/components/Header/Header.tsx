@@ -8,12 +8,13 @@ interface IProps {
 	color: string,
 };
 
-export const Header = ({title, backgroundColor, color}: IProps) => {
+export const Header: React.FC<IProps> = ({title, backgroundColor, color, children}) => {
 	return (
 		<header className={s.root} style={{backgroundColor}}>
 			<h1 className={s.title} style={{color}}>
 				{title}
 			</h1>
+			{children}
 		</header>
 	)
 }
