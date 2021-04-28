@@ -1,0 +1,21 @@
+.root {
+	padding: 10px;
+}
+
+.list {
+	list-style: none;
+}
+
+.el {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		background-color: red;
+		top: 0;
+		left: 40px;
+		width: 30px;
+		height: 10px;
+	}
+}

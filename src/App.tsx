@@ -2,7 +2,10 @@ import React from 'react';
 
 import s from './App.module.css';
 import { Button } from './components/Button';
+import { Dropdown } from './components/Dropdown';
 import { Header } from './components/Header';
+
+const testArray: Array<string> = ['One', 'Two'];
 
 const App: React.FC = () => {
 	return (
@@ -14,6 +17,7 @@ const App: React.FC = () => {
 			</div>
 			<Header title={'Test Title'} backgroundColor={'#4A5758'} color={'#fff'} />
 			<Button />
+			<Dropdown array={testArray} />
 		</section>
 	);
 };
