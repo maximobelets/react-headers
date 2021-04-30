@@ -17,7 +17,7 @@ const App: React.FC = () => {
 			</div>
 			<Header title={'Test Title'} backgroundColor={'#4A5758'} color={'#fff'} />
 			<Button />
-			<Dropdown array={testArray} />
+			<Dropdown list={testArray} />
 		</section>
 	);
 };

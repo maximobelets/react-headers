@@ -1,15 +1,19 @@
 import { useState } from 'react';
 import s from './Dropdown.module.css';
 
-export const Dropdown = ({array}: any) => {
+interface IProps {
+	list: Array<string>,
+};
+
+export const Dropdown = ({list}: IProps) => {
 	const [isActive, setActive] = useState(false);
 
 	return (
-		<div className={s.root} onClick={() => setActive(prevState => !prevState)}>
+		<div className={s.root} onClick={() => setActive(!isActive)}>
 			Dropdown
 			{isActive ? (
 				<ul className={s.list}>
-					{array.map((el: string) => 
+					{list.map((el: string) => 
 						<li className={s.el}>
 							{el}
 						</li>
