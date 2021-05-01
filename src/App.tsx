@@ -1,4 +1,5 @@
 import React from 'react';
+import 'normalize.css';
 
 import s from './App.module.css';
 import { Button } from './components/Button';
