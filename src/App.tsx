@@ -4,8 +4,7 @@ import s from './App.module.css';
 import { Button } from './components/Button';
 import { Dropdown } from './components/Dropdown';
 import { Header } from './components/Header';
-
-const testArray: Array<string> = ['One', 'Two'];
+import { testArray } from './constants/constants';
 
 const App: React.FC = () => {
 	return (
