@@ -6,5 +6,8 @@ export const testArray: Array<TestArray> = [
 	},
 	{
 		name: 'Two',
+	},
+	{
+		name: 'Third',
 	}
 ];
