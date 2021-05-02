@@ -11,8 +11,10 @@ export const Dropdown = ({list}: IProps) => {
 	const [placeholder, setPlaceholder] = useState('Dropdown');
 
 	return (
-		<div className={s.root} onClick={() => setActive(!isActive)}>
-			{placeholder}
+		<>
+			<div className={s.root} onClick={() => setActive(!isActive)}>
+				{placeholder}
+			</div>
 			{isActive ? (
 				<ul className={s.list}>
 					{list.map((el: TestArray) => 
@@ -22,6 +24,6 @@ export const Dropdown = ({list}: IProps) => {
 					)}
 				</ul>
 			) : null}
-		</div>
+		</>
 	);
 };
