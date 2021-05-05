@@ -11,8 +11,9 @@ export const Dropdown = ({list}: IProps) => {
 	const [placeholder, setPlaceholder] = useState('Dropdown');
 	const [inputValue, setInputValue] = useState('');
 
-	const handleInput = (query: any) => {
-		setInputValue(query);
+	const handleInput = (event: any) => {
+		const {value} = event.currentTarget;
+		setInputValue(value);
 	};
 
 	const elementListClick = (data: any) => {
@@ -28,7 +29,7 @@ export const Dropdown = ({list}: IProps) => {
 				className={s.root}
 				value={inputValue}
 				onClick={() => setActive(!isActive)}
-				onChange={(event) => handleInput(event.currentTarget.value)}
+				onChange={handleInput}
 				placeholder={placeholder}
 			/>
 			{isActive ? (
