@@ -7,6 +7,7 @@ interface IProps {
 };
 
 export const Dropdown = ({list}: IProps) => {
+	const [newList, setNewList] = useState(list);
 	const [isActive, setActive] = useState(false);
 	const [placeholder, setPlaceholder] = useState('Dropdown');
 	const [inputValue, setInputValue] = useState('');
@@ -14,6 +15,7 @@ export const Dropdown = ({list}: IProps) => {
 	const handleInput = (event: any) => {
 		const {value} = event.currentTarget;
 		setInputValue(value);
+		setNewList(list.filter(el => el.name.includes(value)));
 	};
 
 	const elementListClick = (data: any) => {
@@ -32,8 +34,8 @@ export const Dropdown = ({list}: IProps) => {
 			/>
 			{isActive ? (
 				<ul className={s.list}>
-					{list.map((el: TestArray) => 
-						<li className={s.el} onClick={() => elementListClick(el.name)}>
+					{newList.map((el: TestArray) => 
+						<li className={s.el} onClick={() => elementListClick(el.name)} key={el.name}>
 							{el.name}
 						</li>
 					)}
