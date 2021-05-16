@@ -21,8 +21,6 @@ export const Dropdown = ({list}: IProps) => {
 		setInputValue(data);
 	}
 
-	console.log(inputValue)
-
 	return (
 		<>
 			<input 
