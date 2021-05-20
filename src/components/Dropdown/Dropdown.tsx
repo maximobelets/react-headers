@@ -6,11 +6,17 @@ interface IProps {
 	list: Array<TestArray>,
 };
 
+interface ISelectedElements {
+	selectedElements: any[],
+}
+
 export const Dropdown = ({list}: IProps) => {
 	const [newList, setNewList] = useState(list);
 	const [isActive, setActive] = useState(false);
 	const [placeholder, setPlaceholder] = useState('Dropdown');
 	const [inputValue, setInputValue] = useState('');
+	const [selectedElements, setSelectedElements] = useState<ISelectedElements[]>([]);
+	const [selected, setSelected] = useState(false);
 
 	const handleInput = (event: any) => {
 		const {value} = event.currentTarget;
@@ -21,6 +27,8 @@ export const Dropdown = ({list}: IProps) => {
 	const elementListClick = (data: any) => {
 		setPlaceholder(data);
 		setInputValue(data);
+		setSelectedElements([...selectedElements, data]);
+		setSelected(!false);
 	}
 
 	return (
@@ -35,7 +43,10 @@ export const Dropdown = ({list}: IProps) => {
 			{isActive ? (
 				<ul className={s.list}>
 					{newList.map((el: TestArray) => 
-						<li className={s.el} onClick={() => elementListClick(el.name)} key={el.name}>
+						<li
+							className={`${s.el} ${selected ? s.selected : ''}`}
+							onClick={(e) => elementListClick(el.name)} key={el.name}
+						>
 							{el.name}
 						</li>
 					)}

@@ -30,3 +30,7 @@
 		background-color: var(--third-color);
 	}
 }
+
+.selected {
+	background-color: var(--fourth-color);
+}
