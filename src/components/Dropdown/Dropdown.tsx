@@ -28,8 +28,12 @@ export const Dropdown = ({list}: IProps) => {
 		setPlaceholder(data);
 		setInputValue(data);
 		setSelectedElements([...selectedElements, data]);
-		setSelected(!false);
+		setSelected(data);
+
+		selectedElements.includes(data) ? setSelectedElements([...selectedElements.filter(el => el !== data)]) : console.log('net');
 	}
+
+	console.log(selectedElements);
 
 	return (
 		<>
