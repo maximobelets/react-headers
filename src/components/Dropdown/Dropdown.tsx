@@ -19,6 +19,15 @@ export const Dropdown = ({list}: IProps) => {
 		setNewList(list.filter(el => el.name.includes(value)));
 	};
 
+	const clickInput = () => {
+		setActive(!isActive);
+
+		if(isActive) {
+			setInputValue('')
+			setPlaceholder('Dropdown')
+		}
+	}
+
 	const elementListClick = (data: any) => {
 		setPlaceholder(data);
 		setInputValue(data);
@@ -29,14 +38,12 @@ export const Dropdown = ({list}: IProps) => {
 		}
 	}
 
-	console.log(selectedElements);
-
 	return (
 		<>
 			<input 
 				className={s.root}
 				value={inputValue}
-				onClick={() => setActive(!isActive)}
+				onClick={clickInput}
 				onChange={handleInput}
 				placeholder={placeholder}
 			/>
