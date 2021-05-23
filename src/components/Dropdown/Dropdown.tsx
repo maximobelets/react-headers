@@ -6,17 +6,12 @@ interface IProps {
 	list: Array<TestArray>,
 };
 
-interface ISelectedElements {
-	selectedElements: any[],
-}
-
 export const Dropdown = ({list}: IProps) => {
 	const [newList, setNewList] = useState(list);
 	const [isActive, setActive] = useState(false);
 	const [placeholder, setPlaceholder] = useState('Dropdown');
 	const [inputValue, setInputValue] = useState('');
-	const [selectedElements, setSelectedElements] = useState<ISelectedElements[]>([]);
-	const [selected, setSelected] = useState(false);
+	const [selectedElements, setSelectedElements] = useState<string[]>([]);
 
 	const handleInput = (event: any) => {
 		const {value} = event.currentTarget;
@@ -28,9 +23,10 @@ export const Dropdown = ({list}: IProps) => {
 		setPlaceholder(data);
 		setInputValue(data);
 		setSelectedElements([...selectedElements, data]);
-		setSelected(data);
 
-		selectedElements.includes(data) ? setSelectedElements([...selectedElements.filter(el => el !== data)]) : console.log('net');
+		if (selectedElements.includes(data)) {
+			setSelectedElements([...selectedElements.filter(el => el !== data)])
+		}
 	}
 
 	console.log(selectedElements);
@@ -48,7 +44,7 @@ export const Dropdown = ({list}: IProps) => {
 				<ul className={s.list}>
 					{newList.map((el: TestArray) => 
 						<li
-							className={`${s.el} ${selected ? s.selected : ''}`}
+							className={`${s.el} ${selectedElements.includes(el.name) ? s.selected : ''}`}
 							onClick={(e) => elementListClick(el.name)} key={el.name}
 						>
 							{el.name}
