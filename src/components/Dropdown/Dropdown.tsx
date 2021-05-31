@@ -9,7 +9,6 @@ interface IProps {
 export const Dropdown = ({list}: IProps) => {
 	const [newList, setNewList] = useState(list);
 	const [isActive, setActive] = useState(false);
-	const [placeholder, setPlaceholder] = useState('Dropdown');
 	const [inputValue, setInputValue] = useState('');
 	const [selectedElements, setSelectedElements] = useState<string[]>([]);
 
@@ -24,12 +23,10 @@ export const Dropdown = ({list}: IProps) => {
 
 		if(isActive) {
 			setInputValue('')
-			setPlaceholder('Dropdown')
 		}
 	}
 
 	const elementListClick = (data: any) => {
-		setPlaceholder(data);
 		setInputValue(data);
 		setSelectedElements([...selectedElements, data]);
 
@@ -45,7 +42,7 @@ export const Dropdown = ({list}: IProps) => {
 				value={inputValue}
 				onClick={clickInput}
 				onChange={handleInput}
-				placeholder={placeholder}
+				placeholder="Dropdown"
 			/>
 			{isActive ? (
 				<ul className={s.list}>
