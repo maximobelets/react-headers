@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { TestArray } from '../../types/types';
 import s from './Dropdown.module.css';
 
+import {testArray} from '../../constants/constants';
+
 interface IProps {
 	list: Array<TestArray>,
 };
 
 export const Dropdown = ({list}: IProps) => {
-	const [newList, setNewList] = useState(list);
+	const [newList, setNewList] = useState(testArray);
 	const [isActive, setActive] = useState(false);
 	const [inputValue, setInputValue] = useState('');
 	const [selectedElements, setSelectedElements] = useState<string[]>([]);
