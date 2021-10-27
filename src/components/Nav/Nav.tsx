@@ -16,6 +16,9 @@ export const Nav = () => {
 			<NavLink to='/header' exact>
 				Header
 			</NavLink>
+			<NavLink to='/search-bar' exact>
+				Search Bar
+			</NavLink>
 		</>
 	);
 };
