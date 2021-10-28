@@ -3,22 +3,22 @@ import s from './Nav.module.css';
 
 export const Nav = () => {
 	return (
-		<>
-			<NavLink to='/' exact>
+		<nav className={s.root}>
+			<NavLink to='/' exact className={s.link}>
 				Main
 			</NavLink>
-			<NavLink to='/button' exact>
+			<NavLink to='/button' exact className={s.link}>
 				Button
 			</NavLink>
-			<NavLink to='/dropdown' exact>
+			<NavLink to='/dropdown' exact className={s.link}>
 				Dropdown
 			</NavLink>
-			<NavLink to='/header' exact>
+			<NavLink to='/header' exact className={s.link}>
 				Header
 			</NavLink>
-			<NavLink to='/search-bar' exact>
+			<NavLink to='/search-bar' exact className={s.link}>
 				Search Bar
 			</NavLink>
-		</>
+		</nav>
 	);
 };
