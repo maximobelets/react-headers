@@ -1,9 +1,15 @@
 .root {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
+	max-width: 500px;
+	margin: 30px auto;
 }
 
 .link {
 	text-decoration: none;
 	color: var(--second-color);
+
+	&:hover {
+		color: var(--fourth-color);
+	}
 }
