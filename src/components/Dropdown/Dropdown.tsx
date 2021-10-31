@@ -3,6 +3,7 @@ import { TestArray } from '../../types/types';
 import s from './Dropdown.module.css';
 
 import {testArray} from '../../constants/constants';
+import { Wrapper } from '../../componentBlocks/Wrapper';
 
 interface IProps {
 	list: Array<TestArray>,
@@ -38,7 +39,7 @@ export const Dropdown = ({list}: IProps) => {
 	}
 
 	return (
-		<>
+		<Wrapper>
 			<input 
 				className={s.root}
 				value={inputValue}
@@ -58,6 +59,6 @@ export const Dropdown = ({list}: IProps) => {
 					)}
 				</ul>
 			) : null}
-		</>
+		</Wrapper>
 	);
 };

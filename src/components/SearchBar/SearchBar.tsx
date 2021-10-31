@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { SearchInput } from "../../componentBlocks/SearchInput";
 import { SearchList } from "../../componentBlocks/SearchList";
+import { Wrapper } from "../../componentBlocks/Wrapper";
 
 import css from './SearchBar.module.css';
 
@@ -15,8 +16,6 @@ export const SearchBar = () => {
 			.then(response => {setData(response); setFilterData(response)})
 			.catch(error => console.log(error))
 	}, []);
-
-	console.log(data)
 
 	const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const {value} = event.currentTarget;
@@ -36,9 +35,11 @@ export const SearchBar = () => {
 	};
 
 	return (
-		<div className={css.root}>
-			<SearchInput handleInput={handleInput} />
-			<SearchList data={data} isActive={isActive} />
-		</div>
+		<Wrapper>
+			<div className={css.root}>
+				<SearchInput handleInput={handleInput} />
+				<SearchList data={data} isActive={isActive} />
+			</div>
+		</Wrapper>
 	)
 }
