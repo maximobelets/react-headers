@@ -8,6 +8,7 @@ import { Dropdown } from './components/Dropdown';
 import { Header } from './components/Header';
 import { Nav } from './components/Nav';
 import { SearchBar } from './components/SearchBar';
+import { Form } from './components/Form';
 
 const App: React.FC = () => {
 	return (
@@ -25,6 +26,7 @@ const App: React.FC = () => {
 				<Route path='/dropdown' component={Dropdown} exact/>
 				<Route path='/header' component={Header} exact/>
 				<Route path='/search-bar' component={SearchBar} exact/>
+				<Route path='/form' component={Form} exact/>
 			</Switch>
 		</Router>
 	);

@@ -19,6 +19,9 @@ export const Nav = () => {
 			<NavLink to='/search-bar' exact className={s.link}>
 				Search Bar
 			</NavLink>
+			<NavLink to='/form' exact className={s.link}>
+				Form
+			</NavLink>
 		</nav>
 	);
 };

@@ -1,11 +1,12 @@
 import css from './SearchInput.module.css';
 
-export const SearchInput = ({handleInput}: any) => {
+export const SearchInput = ({handleInput, placeholder, id}: any) => {
 	return (
 		<input
 			className={css.root}
 			onChange={handleInput}
-			placeholder="Search"
+			placeholder={placeholder}
+			id={id}
 		/>
 	)
 }
