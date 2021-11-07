@@ -1,6 +1,12 @@
 import css from './SearchInput.module.css';
 
-export const SearchInput = ({handleInput, placeholder, id}: any) => {
+interface SearchInputProps {
+	handleInput?: any;
+	placeholder?: string;
+	id?: string;
+}
+
+export const SearchInput = ({handleInput, placeholder, id}: SearchInputProps) => {
 	return (
 		<input
 			className={css.root}

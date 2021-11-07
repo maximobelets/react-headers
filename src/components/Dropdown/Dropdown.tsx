@@ -18,7 +18,7 @@ export const Dropdown = ({list}: IProps) => {
 	const handleInput = (event: any) => {
 		const {value} = event.currentTarget;
 		setInputValue(value);
-		setNewList(list.filter(el => el.name.includes(value)));
+		setNewList(newList.filter(el => el.name.includes(value)));
 	};
 
 	const clickInput = () => {
@@ -40,25 +40,27 @@ export const Dropdown = ({list}: IProps) => {
 
 	return (
 		<Wrapper>
-			<input 
-				className={s.root}
-				value={inputValue}
-				onClick={clickInput}
-				onChange={handleInput}
-				placeholder="Dropdown"
-			/>
-			{isActive ? (
-				<ul className={s.list}>
-					{newList.map((el: TestArray) => 
-						<li
-							className={`${s.el} ${selectedElements.includes(el.name) ? s.selected : ''}`}
-							onClick={(e) => elementListClick(el.name)} key={el.name}
-						>
-							{el.name}
-						</li>
-					)}
-				</ul>
-			) : null}
+			<div className={s.root}>
+				<input 
+					className={s.input}
+					value={inputValue}
+					onClick={clickInput}
+					onChange={handleInput}
+					placeholder="Dropdown"
+				/>
+				{isActive ? (
+					<ul className={s.list}>
+						{newList.map((el: TestArray) => 
+							<li
+								className={`${s.el} ${selectedElements.includes(el.name) ? s.selected : ''}`}
+								onClick={(e) => elementListClick(el.name)} key={el.name}
+							>
+								{el.name}
+							</li>
+						)}
+					</ul>
+				) : null}
+			</div>
 		</Wrapper>
 	);
 };
