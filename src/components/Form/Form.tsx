@@ -8,11 +8,14 @@ export const Form = () => {
 	return (
 		<Wrapper>
 			<div className={s.root}>
-				<Label htmlFor='first'>
+				<Label>
 					Label
+					<SearchInput placeholder={'First value'} type='text'/>
 				</Label>
-				<SearchInput placeholder={'First value'} id='first'/>
-				<SearchInput placeholder={'Second value'} />
+				<Label>
+					Label
+					<SearchInput placeholder={'Second value'} type='text'/>
+				</Label>
 			</div>
 		</Wrapper>
 	)
