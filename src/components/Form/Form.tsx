@@ -5,9 +5,14 @@ import { Wrapper } from "../../componentBlocks/Wrapper"
 import s from './Form.module.css';
 
 export const Form = () => {
+	const handleSubmit = (event: any) => {
+		console.log('Form Submitted')
+		event.preventDefault();
+	};
+
 	return (
 		<Wrapper>
-			<div className={s.root}>
+			<form className={s.root} onSubmit={handleSubmit}>
 				<Label>
 					Label
 					<SearchInput placeholder={'First value'} type='text'/>
@@ -16,7 +21,7 @@ export const Form = () => {
 					Label
 					<SearchInput placeholder={'Second value'} type='text'/>
 				</Label>
-			</div>
+			</form>
 		</Wrapper>
 	)
 }

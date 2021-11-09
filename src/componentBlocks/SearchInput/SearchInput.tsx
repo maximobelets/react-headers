@@ -6,9 +6,10 @@ interface SearchInputProps {
 	id?: string;
 	type?: string;
 	name?: string;
+	value?: string | number;
 }
 
-export const SearchInput = ({handleInput, placeholder, id, type, name}: SearchInputProps) => {
+export const SearchInput = ({handleInput, placeholder, id, type, name, value}: SearchInputProps) => {
 	return (
 		<input
 			className={css.root}
@@ -17,6 +18,7 @@ export const SearchInput = ({handleInput, placeholder, id, type, name}: SearchIn
 			id={id}
 			type={type}
 			name={name}
+			value={value}
 		/>
 	)
 }
