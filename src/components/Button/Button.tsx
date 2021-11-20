@@ -1,11 +1,17 @@
+import React from 'react';
 import { Wrapper } from '../../componentBlocks/Wrapper';
 import s from './Button.module.css';
 
-export const Button = () => {
+interface ButtonProps {
+	children?: React.ReactNode;
+	type?: 'submit' | 'reset' | 'button';
+}
+
+export const Button = ({children = 'Click Me!', type}: ButtonProps) => {
 	return (
 		<Wrapper>
-			<button className={s.root}>
-				Click Me!
+			<button className={s.root} type={type}>
+				{children}
 			</button>
 		</Wrapper>
 	)
