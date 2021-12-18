@@ -1,5 +1,8 @@
 .root {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 16px;
+  background-color: var(--third-color);
+  padding: 40px;
 }
