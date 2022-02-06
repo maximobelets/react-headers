@@ -2,13 +2,15 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import 'normalize.css';
 
-import s from './App.module.css';
 import { Button } from './components/Button';
 import { Dropdown } from './components/Dropdown';
 import { Header } from './components/Header';
 import { Nav } from './components/Nav';
 import { SearchBar } from './components/SearchBar';
 import { Form } from './components/Form';
+import { CountrySelectDropdown } from './components/CountrySelectDropdown';
+
+import s from './App.module.css';
 
 const App: React.FC = () => {
 	return (
@@ -22,11 +24,12 @@ const App: React.FC = () => {
 				</div>
 			</section>
 			<Switch>
-				<Route path='/button' component={Button} exact></Route>
-				<Route path='/dropdown' component={Dropdown} exact/>
-				<Route path='/header' component={Header} exact/>
-				<Route path='/search-bar' component={SearchBar} exact/>
-				<Route path='/form' component={Form} exact/>
+				<Route path='/button' component={Button} exact />
+				<Route path='/dropdown' component={Dropdown} exact />
+				<Route path='/header' component={Header} exact />
+				<Route path='/search-bar' component={SearchBar} exact />
+				<Route path='/form' component={Form} exact />
+				<Route path='/country-select-dropdown' component={CountrySelectDropdown} exact />
 			</Switch>
 		</Router>
 	);
