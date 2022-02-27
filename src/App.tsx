@@ -8,7 +8,7 @@ import { Header } from './components/Header';
 import { Nav } from './components/Nav';
 import { SearchBar } from './components/SearchBar';
 import { Form } from './components/Form';
-import { CountrySelectDropdown } from './components/CountrySelectDropdown';
+import { Multiselect } from './components/Multiselect';
 
 import s from './App.module.css';
 
@@ -29,7 +29,7 @@ const App: React.FC = () => {
 				<Route path='/header' component={Header} exact />
 				<Route path='/search-bar' component={SearchBar} exact />
 				<Route path='/form' component={Form} exact />
-				<Route path='/country-select-dropdown' component={CountrySelectDropdown} exact />
+				<Route path='/multiselect' component={Multiselect} exact />
 			</Switch>
 		</Router>
 	);

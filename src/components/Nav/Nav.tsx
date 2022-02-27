@@ -22,8 +22,8 @@ export const Nav = () => {
 			<NavLink to='/form' exact className={s.link}>
 				Form
 			</NavLink>
-			<NavLink to='/country-select-dropdown' exact className={s.link}>
-				Country	Select	Dropdown
+			<NavLink to='/multiselect' exact className={s.link}>
+				Multiselect
 			</NavLink>
 		</nav>
 	);

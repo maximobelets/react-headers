@@ -1,12 +1,12 @@
 import { Wrapper } from "../../componentBlocks/Wrapper"
 
-import s from './CountrySelectDropdown.module.css';
+import s from './Multiselect.module.css';
 
-export const CountrySelectDropdown = () => {
+export const Multiselect = () => {
 	return (
 		<Wrapper>
 			<div className={s.root}>
-				CountrySelectDropdown
+				Multiselect
 			</div>
 		</Wrapper>
 	)
