@@ -17,6 +17,7 @@ export const Dropdown = ({list}: IProps) => {
 
 	const handleInput = (event: any) => {
 		const {value} = event.currentTarget;
+
 		setInputValue(value);
 		setNewList(newList.filter(el => el.name.includes(value)));
 	};
@@ -24,7 +25,7 @@ export const Dropdown = ({list}: IProps) => {
 	const clickInput = () => {
 		setActive(!isActive);
 
-		if(isActive) {
+		if (isActive) {
 			setInputValue('')
 		}
 	}
@@ -34,7 +35,7 @@ export const Dropdown = ({list}: IProps) => {
 		setSelectedElements([...selectedElements, data]);
 
 		if (selectedElements.includes(data)) {
-			setSelectedElements([...selectedElements.filter(el => el !== data)])
+			setSelectedElements([...selectedElements.filter(element => element !== data)])
 		}
 	}
 
@@ -48,7 +49,7 @@ export const Dropdown = ({list}: IProps) => {
 					onChange={handleInput}
 					placeholder="Dropdown"
 				/>
-				{isActive ? (
+				{isActive && (
 					<ul className={s.list}>
 						{newList.map((el: TestArray) => 
 							<li
@@ -59,7 +60,7 @@ export const Dropdown = ({list}: IProps) => {
 							</li>
 						)}
 					</ul>
-				) : null}
+				)}
 			</div>
 		</Wrapper>
 	);

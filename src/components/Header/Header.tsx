@@ -7,14 +7,15 @@ interface IProps {
 	title: string,
 	backgroundColor: string,
 	color: string,
+	children: React.ReactNode,
 };
 
-export const Header: React.FC<IProps> = ({
+export const Header = ({
 		title = 'Title',
 		backgroundColor = 'gray',
 		color = '#000',
 		children = 'Text'
-	}) => {
+	}: IProps ) => {
 
 	return (
 		<Wrapper>
