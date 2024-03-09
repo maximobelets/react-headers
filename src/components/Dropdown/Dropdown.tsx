@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import { TestArray } from '../../types/types';
 import s from './Dropdown.module.css';
 
@@ -15,7 +15,7 @@ export const Dropdown = ({list}: IProps) => {
 	const [inputValue, setInputValue] = useState('');
 	const [selectedElements, setSelectedElements] = useState<string[]>([]);
 
-	const handleInput = (event: any) => {
+	const handleInput = (event: SyntheticEvent<HTMLInputElement>) => {
 		const {value} = event.currentTarget;
 
 		setInputValue(value);
@@ -51,12 +51,12 @@ export const Dropdown = ({list}: IProps) => {
 				/>
 				{isActive && (
 					<ul className={s.list}>
-						{newList.map((el: TestArray) => 
+						{newList.map((element: TestArray) => 
 							<li
-								className={`${s.el} ${selectedElements.includes(el.name) ? s.selected : ''}`}
-								onClick={(e) => elementListClick(el.name)} key={el.name}
+								className={`${s.el} ${selectedElements.includes(element.name) ? s.selected : ''}`}
+								onClick={(e) => elementListClick(element.name)} key={element.name}
 							>
-								{el.name}
+								{element.name}
 							</li>
 						)}
 					</ul>

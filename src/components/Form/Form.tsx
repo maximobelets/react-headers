@@ -1,3 +1,4 @@
+import { SyntheticEvent } from "react";
 import { Label } from "../../componentBlocks/Label";
 import { SearchInput } from "../../componentBlocks/SearchInput";
 import { Wrapper } from "../../componentBlocks/Wrapper"
@@ -6,8 +7,8 @@ import { Button } from "../Button";
 import s from './Form.module.css';
 
 export const Form = () => {
-	const handleSubmit = (event: any) => {
-		console.log('Form Submitted')
+	const handleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
+
 		event.preventDefault();
 	};
 
