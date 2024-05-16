@@ -1,30 +1,23 @@
 import {NavLink} from "react-router-dom";
+import { Path } from "../../types/types";
+
+// import menuIcon from './assets/menu.svg';
+// import crossIcon from './assets/cross.svg';
+
 import s from './Nav.module.css';
 
-export const Nav = () => {
+interface NavProps {
+	links: Path[]
+}
+
+export const Nav = ({ links }: NavProps) => {
 	return (
 		<nav className={s.root}>
-			<NavLink to='/' exact className={s.link}>
-				Main
-			</NavLink>
-			<NavLink to='/button' exact className={s.link}>
-				Button
-			</NavLink>
-			<NavLink to='/dropdown' exact className={s.link}>
-				Dropdown
-			</NavLink>
-			<NavLink to='/header' exact className={s.link}>
-				Header
-			</NavLink>
-			<NavLink to='/search-bar' exact className={s.link}>
-				Search Bar
-			</NavLink>
-			<NavLink to='/form' exact className={s.link}>
-				Form
-			</NavLink>
-			<NavLink to='/multiselect' exact className={s.link}>
-				Multiselect
-			</NavLink>
+			{links.map((link: Path) => (
+				<NavLink to={link.path} exact={link.exact} className={s.link} key={link.path}>
+					{link.title}
+				</NavLink>
+			))}
 		</nav>
 	);
 };

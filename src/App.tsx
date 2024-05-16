@@ -11,11 +11,50 @@ import { Form } from './components/Form';
 import { Multiselect } from './components/Multiselect';
 
 import s from './App.module.css';
+import { Path } from './types/types';
 
 const App: React.FC = () => {
+	const navConfig: Path[] = [
+		{
+			path: '/',
+			exact: true,
+			title: 'Main',
+		},
+		{
+			path: '/button',
+			exact: true,
+			title: 'Button',
+		},
+		{
+			path: '/dropdown',
+			exact: true,
+			title: 'Dropdown',
+		},
+		{
+			path: '/header',
+			exact: true,
+			title: 'Header',
+		},
+		{
+			path: '/search-bar',
+			exact: true,
+			title: 'Search Bar',
+		},
+		{
+			path: '/form',
+			exact: true,
+			title: 'Form',
+		},
+		{
+			path: '/multiselect',
+			exact: true,
+			title: 'Multiselect',
+		},
+	];
+
 	return (
 		<Router>
-			<Nav />
+			<Nav links={navConfig} />
 			<section className={s.root}>
 				<div>
 					<h1 className={s.title}>
