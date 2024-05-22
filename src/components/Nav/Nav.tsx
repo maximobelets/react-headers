@@ -1,8 +1,11 @@
+import { useState } from "react";
+import cn from "classnames";
+
 import {NavLink} from "react-router-dom";
 import { Path } from "../../types/types";
 
-// import menuIcon from './assets/menu.svg';
-// import crossIcon from './assets/cross.svg';
+import menuIcon from './assets/menu.svg';
+import crossIcon from './assets/cross.svg';
 
 import s from './Nav.module.css';
 
@@ -11,13 +14,26 @@ interface NavProps {
 }
 
 export const Nav = ({ links }: NavProps) => {
+	const [mobileMenu, setMobileMenu] = useState(true);
+
+	const handleMobileMenu = () => setMobileMenu(!mobileMenu);
+
 	return (
-		<nav className={s.root}>
-			{links.map((link: Path) => (
-				<NavLink to={link.path} exact={link.exact} className={s.link} key={link.path}>
-					{link.title}
-				</NavLink>
-			))}
+		<nav className={cn(s.root, !mobileMenu && s.mobileNav  )}>
+			<ul className={cn(s.linksList, !mobileMenu && s.linksListMobile)}>
+				{links.map((link: Path) => (
+					<li>
+						<NavLink to={link.path} exact={link.exact} className={s.link} key={link.path}>
+							{link.title}
+						</NavLink>
+					</li>
+				))}
+			</ul>
+			<img
+				src={mobileMenu ? menuIcon : crossIcon}
+				className={s.mobileMenu}
+				onClick={handleMobileMenu}
+			/>
 		</nav>
 	);
 };

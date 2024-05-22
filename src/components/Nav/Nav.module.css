@@ -1,8 +1,23 @@
 .root {
 	display: flex;
-	justify-content: space-between;
+	justify-content: end;
 	max-width: 500px;
 	margin: 30px auto;
+}
+
+.linksList {
+	list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+	@media (max-width: 1024px) {
+		display: none;
+	}
+}
+
+.linksListMobile {
+	display: block;
 }
 
 .link {
@@ -13,3 +28,111 @@
 		color: var(--fourth-color);
 	}
 }
+
+.mobileMenu {
+	width: 24px;
+	height: 24px;
+
+	@media (min-width: 1024px) {
+		display: none;
+	}
+}
+
+.mobileNav {
+	@media (max-width: 1024px) {
+		background-color: red;
+		position: fixed;
+		min-width: 100%;
+		height: 100%;
+		margin: 0;
+		top: 0;
+	}
+}
+
+/* .nav {
+	min-width: 800px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@media (max-width: 1024px) {
+		display: none;
+	}
+}
+
+.mobileNav {
+	body {
+		overflow: hidden;
+	}
+
+	@media (max-width: 1024px) {
+		display: block;
+		flex-direction: column;
+		justify-content: flex-start;
+		position: fixed;
+		top: 0;
+		left: 0;
+		min-width: unset;
+		width: 100%;
+		background-color: #FFFFFB;
+		z-index: 1;
+		height: 100%;
+		margin-top: 120px;
+	}
+}
+
+.navItem {
+	position: relative;
+	white-space: nowrap;
+	padding: 10px;
+	display: block;
+}
+
+.link {
+	color: #000;
+	transition: 0.5s;
+	padding: 10px;
+}
+
+.linksWrapper {
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	padding: 10px;
+	margin-top: 10px;
+	background-color: #00ccf5;
+	z-index: 101;
+
+	& a {
+		color: #fff;
+	}
+
+	& a:hover {
+		color: #000;
+	}
+
+	@media (max-width: 1024px) {
+		display: flex;
+		background-color: unset;
+		position: unset;
+		margin-top: unset;
+
+		& a {
+			color: #000;
+		}
+	}
+}
+
+.link {
+	@media (max-width: 1024px) {
+		display: block;
+		padding: 8px;
+	}
+}
+
+.about {
+	&:hover .linksWrapper {
+		display: flex;
+	}
+} */
+
