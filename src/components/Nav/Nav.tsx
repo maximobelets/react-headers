@@ -31,6 +31,7 @@ export const Nav = ({ links }: NavProps) => {
 			</ul>
 			<img
 				src={mobileMenu ? menuIcon : crossIcon}
+				alt={mobileMenu ? 'Icon for open mobile menu' : 'Icon for close mobile menu'}
 				className={s.mobileMenu}
 				onClick={handleMobileMenu}
 			/>
