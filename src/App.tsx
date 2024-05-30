@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import 'normalize.css';
 
 import { Button } from './components/Button';
@@ -25,14 +25,14 @@ const App: React.FC = () => {
 					</h1>
 				</div>
 			</section>
-			<Switch>
-				<Route path='/button' component={Button} exact />
-				<Route path='/dropdown' component={Dropdown} exact />
-				<Route path='/header' component={Header} exact />
-				<Route path='/search-bar' component={SearchBar} exact />
-				<Route path='/form' component={Form} exact />
-				<Route path='/multiselect' component={Multiselect} exact />
-			</Switch>
+			<Routes>
+				<Route path='/button' element={<Button />} exact />
+				<Route path='/dropdown' element={<Dropdown />} exact />
+				<Route path='/header' element={<Header />} exact />
+				<Route path='/search-bar' element={<SearchBar />} exact />
+				<Route path='/form' element={<Form />} exact />
+				<Route path='/multiselect' element={<Multiselect />} exact />
+			</Routes>
 		</Router>
 	);
 };
