@@ -5,11 +5,11 @@ import s from './Dropdown.module.css';
 import {testArray} from '../../constants/constants';
 import { Wrapper } from '../../componentBlocks/Wrapper';
 
-interface IProps {
-	list: Array<TestArray>,
+interface DropdownProps {
+	list?: Array<TestArray>,
 };
 
-export const Dropdown = ({list}: IProps) => {
+export const Dropdown = ({list}: DropdownProps) => {
 	const [newList, setNewList] = useState(testArray);
 	const [isActive, setActive] = useState(false);
 	const [inputValue, setInputValue] = useState('');

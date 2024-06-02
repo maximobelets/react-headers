@@ -23,7 +23,7 @@ export const Nav = ({ links }: NavProps) => {
 			<ul className={cn(s.linksList, !mobileMenu && s.linksListMobile)}>
 				{links.map((link: Path) => (
 					<li>
-						<NavLink to={link.path} exact={link.exact} className={s.link} key={link.path}>
+						<NavLink to={link.path} className={s.link} key={link.path}>
 							{link.title}
 						</NavLink>
 					</li>

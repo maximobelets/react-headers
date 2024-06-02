@@ -26,12 +26,12 @@ const App: React.FC = () => {
 				</div>
 			</section>
 			<Routes>
-				<Route path='/button' element={<Button />} exact />
-				<Route path='/dropdown' element={<Dropdown />} exact />
-				<Route path='/header' element={<Header />} exact />
-				<Route path='/search-bar' element={<SearchBar />} exact />
-				<Route path='/form' element={<Form />} exact />
-				<Route path='/multiselect' element={<Multiselect />} exact />
+				<Route path='/button' element={<Button />} />
+				<Route path='/dropdown' element={<Dropdown />} />
+				<Route path='/header' element={<Header />} />
+				<Route path='/search-bar' element={<SearchBar />} />
+				<Route path='/form' element={<Form />} />
+				<Route path='/multiselect' element={<Multiselect />} />
 			</Routes>
 		</Router>
 	);

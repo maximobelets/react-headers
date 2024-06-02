@@ -3,11 +3,11 @@ import { Wrapper } from '../../componentBlocks/Wrapper';
 
 import s from './Header.module.css';
 
-interface IProps {
-	title: string,
-	backgroundColor: string,
-	color: string,
-	children: React.ReactNode,
+interface HeaderProps {
+	title?: string,
+	backgroundColor?: string,
+	color?: string,
+	children?: React.ReactNode,
 };
 
 export const Header = ({
@@ -15,7 +15,7 @@ export const Header = ({
 		backgroundColor = 'gray',
 		color = '#000',
 		children = 'Text'
-	}: IProps ) => {
+	}: HeaderProps ) => {
 
 	return (
 		<Wrapper>
