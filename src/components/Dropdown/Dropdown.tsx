@@ -1,9 +1,11 @@
 import { SyntheticEvent, useState } from 'react';
+
 import { TestArray } from '../../types/types';
-import s from './Dropdown.module.css';
 
 import {testArray} from '../../constants/constants';
 import { Wrapper } from '../../componentBlocks/Wrapper';
+
+import s from './Dropdown.module.css';
 
 interface DropdownProps {
 	list?: Array<TestArray>,
@@ -54,7 +56,7 @@ export const Dropdown = ({list}: DropdownProps) => {
 						{newList.map((element: TestArray) => 
 							<li
 								className={`${s.el} ${selectedElements.includes(element.name) ? s.selected : ''}`}
-								onClick={(e) => elementListClick(element.name)} key={element.name}
+								onClick={() => elementListClick(element.name)} key={element.name}
 							>
 								{element.name}
 							</li>

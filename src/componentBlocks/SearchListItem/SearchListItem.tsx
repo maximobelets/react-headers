@@ -1,8 +1,12 @@
-import css from './SearchListItem.module.css';
+import s from './SearchListItem.module.css';
 
-export const SearchListItem = ({name}: any) => {
+interface SearchListItemProps {
+	name: string,
+};
+
+export const SearchListItem = ({name}: SearchListItemProps) => {
 	return (
-		<h1 className={css.root}>
+		<h1 className={s.root}>
 			{name}
 		</h1>
 	)

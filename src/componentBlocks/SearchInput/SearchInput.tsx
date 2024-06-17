@@ -1,4 +1,4 @@
-import css from './SearchInput.module.css';
+import s from './SearchInput.module.css';
 
 interface SearchInputProps {
 	handleInput?: any;
@@ -12,7 +12,7 @@ interface SearchInputProps {
 export const SearchInput = ({handleInput, placeholder, id, type, name, value}: SearchInputProps) => {
 	return (
 		<input
-			className={css.root}
+			className={s.root}
 			onChange={handleInput}
 			placeholder={placeholder}
 			id={id}

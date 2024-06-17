@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+
 import { SearchInput } from "../../componentBlocks/SearchInput";
 import { SearchList } from "../../componentBlocks/SearchList";
 import { Wrapper } from "../../componentBlocks/Wrapper";
 
-import css from './SearchBar.module.css';
+import s from './SearchBar.module.css';
 
 export const SearchBar = () => {
 	const [data, setData] = useState([]);
@@ -36,7 +37,7 @@ export const SearchBar = () => {
 
 	return (
 		<Wrapper>
-			<div className={css.root}>
+			<div className={s.root}>
 				<SearchInput handleInput={handleInput} />
 				<SearchList data={data} isActive={isActive} />
 			</div>

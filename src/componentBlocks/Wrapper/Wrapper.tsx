@@ -1,6 +1,10 @@
 import s from './Wrapper.module.css';
 
-export const Wrapper = ({children}: any) => {
+interface WrapperProps {
+	children: React.ReactNode;
+};
+
+export const Wrapper = ({children}: WrapperProps) => {
 	return (
 		<div className={s.root}>
 			{children}

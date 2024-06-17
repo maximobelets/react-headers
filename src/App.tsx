@@ -1,4 +1,3 @@
-import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import 'normalize.css';
 
@@ -14,7 +13,7 @@ import { navConfig } from './utils/configs';
 
 import s from './App.module.css';
 
-const App: React.FC = () => {
+const App = () => {
 	return (
 		<Router>
 			<Nav links={navConfig} />

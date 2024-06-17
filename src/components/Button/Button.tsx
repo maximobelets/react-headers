@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Wrapper } from '../../componentBlocks/Wrapper';
+
 import s from './Button.module.css';
 
 interface ButtonProps {
