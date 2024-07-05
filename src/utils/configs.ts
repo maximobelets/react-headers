@@ -36,4 +36,9 @@ export const navConfig: Path[] = [
         exact: true,
         title: 'Multiselect',
     },
+    {
+        path: '/select',
+        exact: true,
+        title: 'Select',
+    },
 ];

@@ -8,6 +8,7 @@ import { Nav } from './components/Nav';
 import { SearchBar } from './components/SearchBar';
 import { Form } from './components/Form';
 import { Multiselect } from './components/Multiselect';
+import { Select } from './components/Select';
 
 import { navConfig } from './utils/configs';
 
@@ -31,6 +32,7 @@ const App = () => {
 				<Route path='/search-bar' element={<SearchBar />} />
 				<Route path='/form' element={<Form />} />
 				<Route path='/multiselect' element={<Multiselect />} />
+				<Route path='/select' element={<Select />} />
 			</Routes>
 		</Router>
 	);
