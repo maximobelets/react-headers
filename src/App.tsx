@@ -1,5 +1,4 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import 'normalize.css';
 
 import { Button } from './components/Button';
 import { Dropdown } from './components/Dropdown';
@@ -11,6 +10,9 @@ import { Multiselect } from './components/Multiselect';
 import { Select } from './components/Select';
 
 import { navConfig } from './utils/configs';
+import { testArray } from './constants/constants';
+
+import 'normalize.css';
 
 import s from './App.module.css';
 
@@ -32,7 +34,7 @@ const App = () => {
 				<Route path='/search-bar' element={<SearchBar />} />
 				<Route path='/form' element={<Form />} />
 				<Route path='/multiselect' element={<Multiselect />} />
-				<Route path='/select' element={<Select />} />
+				<Route path='/select' element={<Select list={testArray} />} />
 			</Routes>
 		</Router>
 	);
