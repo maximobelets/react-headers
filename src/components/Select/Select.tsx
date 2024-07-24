@@ -29,11 +29,12 @@ export const Select = ({ list }: SelectProps) => {
 				<input
 					value={activeValue}
 					onClick={handleSelect}
+					className={s.input}
 				/>
 				{isOpen && (
-					<ul>
+					<ul className={s.list}>
 						{list?.map((item) =>
-							<li onClick={() => changeValue(item.name)}>
+							<li onClick={() => changeValue(item.name)} className={s.item}>
 								{item.name}
 							</li>
 						)}
