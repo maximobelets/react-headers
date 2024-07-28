@@ -1,8 +1,6 @@
 import { SyntheticEvent, useState } from 'react';
 
 import { TestArray } from '../../types/types';
-
-import {testArray} from '../../constants/constants';
 import { Wrapper } from '../../componentBlocks/Wrapper';
 
 import s from './Dropdown.module.css';
@@ -12,7 +10,7 @@ interface DropdownProps {
 };
 
 export const Dropdown = ({list}: DropdownProps) => {
-	const [newList, setNewList] = useState(testArray);
+	const [newList, setNewList] = useState(list);
 	const [isActive, setActive] = useState(false);
 	const [inputValue, setInputValue] = useState('');
 	const [selectedElements, setSelectedElements] = useState<string[]>([]);
@@ -21,7 +19,7 @@ export const Dropdown = ({list}: DropdownProps) => {
 		const {value} = event.currentTarget;
 
 		setInputValue(value);
-		setNewList(newList.filter(el => el.name.includes(value)));
+		setNewList(newList?.filter(el => el.name.includes(value)));
 	};
 
 	const clickInput = () => {
@@ -53,7 +51,7 @@ export const Dropdown = ({list}: DropdownProps) => {
 				/>
 				{isActive && (
 					<ul className={s.list}>
-						{newList.map((element: TestArray) => 
+						{newList?.map((element: TestArray) => 
 							<li
 								className={`${s.el} ${selectedElements.includes(element.name) ? s.selected : ''}`}
 								onClick={() => elementListClick(element.name)} key={element.name}

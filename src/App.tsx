@@ -29,7 +29,7 @@ const App = () => {
 			</section>
 			<Routes>
 				<Route path='/button' element={<Button />} />
-				<Route path='/dropdown' element={<Dropdown />} />
+				<Route path='/dropdown' element={<Dropdown list={testArray} />} />
 				<Route path='/header' element={<Header />} />
 				<Route path='/search-bar' element={<SearchBar />} />
 				<Route path='/form' element={<Form />} />
