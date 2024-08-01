@@ -18,7 +18,7 @@ export const Select = ({ list }: SelectProps) => {
 		setIsOpen(prevState => !prevState)
 	}
 
-	const changeValue = (data: any) => {
+	const changeValue = (data: string): void => {
 		setActiveValue(data)
 		setIsOpen(prevState => !prevState)
 	}
