@@ -34,7 +34,11 @@ export const Select = ({ list }: SelectProps) => {
 				{isOpen && (
 					<ul className={s.list}>
 						{list?.map((item) =>
-							<li onClick={() => changeValue(item.name)} className={s.item}>
+							<li
+								onClick={() => changeValue(item.name)}
+								className={s.item}
+								key={item.name}
+							>
 								{item.name}
 							</li>
 						)}
