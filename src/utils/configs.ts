@@ -22,9 +22,9 @@ export const navConfig: Path[] = [
         title: 'Header',
     },
     {
-        path: '/search-bar',
+        path: '/autocomplete',
         exact: true,
-        title: 'Search Bar',
+        title: 'Autocomplete',
     },
     {
         path: '/form',

@@ -4,7 +4,7 @@ import { Button } from './components/Button';
 import { Dropdown } from './components/Dropdown';
 import { Header } from './components/Header';
 import { Nav } from './components/Nav';
-import { SearchBar } from './components/SearchBar';
+import { Autocomplete } from './components/Autocomplete';
 import { Form } from './components/Form';
 import { Multiselect } from './components/Multiselect';
 import { Select } from './components/Select';
@@ -31,7 +31,7 @@ const App = () => {
 				<Route path='/button' element={<Button />} />
 				<Route path='/dropdown' element={<Dropdown list={testArray} />} />
 				<Route path='/header' element={<Header />} />
-				<Route path='/search-bar' element={<SearchBar />} />
+				<Route path='/autocomplete' element={<Autocomplete />} />
 				<Route path='/form' element={<Form />} />
 				<Route path='/multiselect' element={<Multiselect />} />
 				<Route path='/select' element={<Select list={testArray} />} />

@@ -4,9 +4,9 @@ import { SearchInput } from "../../componentBlocks/SearchInput";
 import { SearchList } from "../../componentBlocks/SearchList";
 import { Wrapper } from "../../componentBlocks/Wrapper";
 
-import s from './SearchBar.module.css';
+import s from './Autocomplete.module.css';
 
-export const SearchBar = () => {
+export const Autocomplete = () => {
 	const [data, setData] = useState([]);
 	const [filterData, setFilterData] = useState(data)
 	const [isActive, setIsActive] = useState(false);
