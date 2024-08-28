@@ -14,24 +14,29 @@ interface NavProps {
 }
 
 export const Nav = ({ links }: NavProps) => {
-	const [mobileMenu, setMobileMenu] = useState(true);
+	const [mobileMenu, setMobileMenu] = useState(false);
 
-	const handleMobileMenu = () => setMobileMenu(!mobileMenu);
+	const handleMobileMenu = () => setMobileMenu(prevState => !prevState);
 
 	return (
-		<nav className={cn(s.root, !mobileMenu && s.mobileNav  )}>
-			<ul className={cn(s.linksList, !mobileMenu && s.linksListMobile)}>
+		<nav className={cn(s.root, mobileMenu && s.mobileNav  )}>
+			<ul className={cn(s.linksList, mobileMenu && s.linksListMobile)}>
 				{links.map((link: Path) => (
 					<li>
-						<NavLink to={link.path} className={s.link} key={link.path}>
+						<NavLink
+							to={link.path}
+							className={s.link}
+							key={link.path}
+							onClick={() => mobileMenu && handleMobileMenu()}
+						>
 							{link.title}
 						</NavLink>
 					</li>
 				))}
 			</ul>
 			<img
-				src={mobileMenu ? menuIcon : crossIcon}
-				alt={mobileMenu ? 'Icon for open mobile menu' : 'Icon for close mobile menu'}
+				src={!mobileMenu ? menuIcon : crossIcon}
+				alt={!mobileMenu ? 'Icon for open mobile menu' : 'Icon for close mobile menu'}
 				className={s.mobileMenu}
 				onClick={handleMobileMenu}
 			/>
