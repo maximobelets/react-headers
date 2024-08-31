@@ -1,7 +1,7 @@
 import s from './SearchInput.module.css';
 
 interface SearchInputProps {
-	handleInput?: any;
+	handleInput?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	placeholder?: string;
 	id?: string;
 	type?: string;

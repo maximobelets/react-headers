@@ -1,7 +1,7 @@
 import { useState } from "react";
 import cn from "classnames";
 
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Path } from "../../types/types";
 
 import menuIcon from './assets/menu.svg';
@@ -10,7 +10,7 @@ import crossIcon from './assets/cross.svg';
 import s from './Nav.module.css';
 
 interface NavProps {
-	links: Path[]
+	links: Path[];
 }
 
 export const Nav = ({ links }: NavProps) => {
