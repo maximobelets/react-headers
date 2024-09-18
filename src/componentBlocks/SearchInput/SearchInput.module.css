@@ -5,4 +5,5 @@
   border: 2px solid var(--fourth-color);
   max-width: max-content;
   min-width: -webkit-fill-available;
+  outline: none;
 }

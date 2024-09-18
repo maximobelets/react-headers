@@ -9,7 +9,7 @@ interface SearchInputProps {
 	value?: string | number;
 }
 
-export const SearchInput = ({handleInput, placeholder, id, type, name, value}: SearchInputProps) => {
+export const SearchInput = ({ handleInput, placeholder, id, type, name, value }: SearchInputProps) => {
 	return (
 		<input
 			className={s.root}
