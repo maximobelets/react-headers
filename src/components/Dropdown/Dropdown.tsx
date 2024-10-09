@@ -1,9 +1,10 @@
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useRef, useState } from 'react';
 
 import { TestArray } from '../../types/types';
 import { Wrapper } from '../../componentBlocks/Wrapper';
 
 import s from './Dropdown.module.css';
+import { useOutsideClick } from '../../hooks/hooks';
 
 interface DropdownProps {
 	list?: Array<TestArray>,
@@ -39,9 +40,13 @@ export const Dropdown = ({list}: DropdownProps) => {
 		}
 	}
 
+	const ref = useRef(null);
+
+	useOutsideClick(ref, () => setActive(false))
+
 	return (
 		<Wrapper>
-			<div className={s.root}>
+			<div className={s.root} ref={ref}>
 				<input 
 					className={s.input}
 					value={inputValue}
