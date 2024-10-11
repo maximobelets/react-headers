@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-export const useOutsideClick = (ref, func) => {
-    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-        if (ref.current && !ref.current.contains(event.target)) {
+export const useOutsideClick = (ref: React.MutableRefObject<HTMLInputElement>, func: () => void) => {
+    const handleClickOutside = (event: MouseEvent): void => {
+        if (ref.current && !ref.current.contains(event.target as Node)) {
             func();
         }
     };

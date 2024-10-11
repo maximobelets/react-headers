@@ -3,8 +3,9 @@ import { SyntheticEvent, useRef, useState } from 'react';
 import { TestArray } from '../../types/types';
 import { Wrapper } from '../../componentBlocks/Wrapper';
 
-import s from './Dropdown.module.css';
 import { useOutsideClick } from '../../hooks/hooks';
+
+import s from './Dropdown.module.css';
 
 interface DropdownProps {
 	list?: Array<TestArray>,
