@@ -1,15 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { SearchInput } from "../../componentBlocks/SearchInput";
 import { SearchList } from "../../componentBlocks/SearchList";
 import { Wrapper } from "../../componentBlocks/Wrapper";
 
 import s from './Autocomplete.module.css';
+import { useOutsideClick } from "../../hooks/hooks";
 
 export const Autocomplete = () => {
 	const [data, setData] = useState([]);
 	const [filterData, setFilterData] = useState(data)
 	const [isActive, setIsActive] = useState(false);
+
+	const ref = useRef(null);
+
+	useOutsideClick(ref, () => setIsActive(false))
 
 	useEffect(() => {
 		fetch('https://jsonplaceholder.typicode.com/users')
@@ -37,7 +42,7 @@ export const Autocomplete = () => {
 
 	return (
 		<Wrapper>
-			<div className={s.root}>
+			<div className={s.root} ref={ref}>
 				<SearchInput handleInput={handleInput} />
 				<SearchList data={data} isActive={isActive} />
 			</div>
