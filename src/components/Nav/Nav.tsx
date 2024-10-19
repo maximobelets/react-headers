@@ -27,7 +27,7 @@ export const Nav = ({ links }: NavProps) => {
 							to={link.path}
 							className={s.link}
 							key={link.path}
-							onClick={() => mobileMenu && handleMobileMenu()}
+							onClick={(): void => mobileMenu && handleMobileMenu()}
 						>
 							{link.title}
 						</NavLink>
