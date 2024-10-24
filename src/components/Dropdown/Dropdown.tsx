@@ -9,9 +9,10 @@ import s from './Dropdown.module.css';
 
 interface DropdownProps {
 	list?: Array<TestArray>,
+	multiselect?: boolean,
 };
 
-export const Dropdown = ({list}: DropdownProps) => {
+export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 	const [newList, setNewList] = useState(list);
 	const [isActive, setActive] = useState(false);
 	const [inputValue, setInputValue] = useState('');
@@ -34,17 +35,20 @@ export const Dropdown = ({list}: DropdownProps) => {
 
 	const elementListClick = (data: any) => {
 		setInputValue(data);
-		setSelectedElements([...selectedElements, data]);
 
-		if (selectedElements.includes(data)) {
-			setSelectedElements([...selectedElements.filter(element => element !== data)])
+		if (multiselect) {
+			setSelectedElements([...selectedElements, data]);
+
+			if (selectedElements.includes(data)) {
+				setSelectedElements([...selectedElements.filter(element => element !== data)])
+			}
 		}
 	}
 
 	const ref = useRef(null);
 
 	useOutsideClick(ref, () => setActive(false))
-
+	console.log(inputValue, 'inputValue')
 	return (
 		<Wrapper>
 			<div className={s.root} ref={ref}>
@@ -59,7 +63,9 @@ export const Dropdown = ({list}: DropdownProps) => {
 					<ul className={s.list}>
 						{newList?.map((element: TestArray) => 
 							<li
-								className={`${s.el} ${selectedElements.includes(element.name) ? s.selected : ''}`}
+								className={`${s.el} 
+									${selectedElements.includes(element.name) || element.name === inputValue 
+									? s.selected : ''}`}
 								onClick={() => elementListClick(element.name)} key={element.name}
 							>
 								{element.name}
