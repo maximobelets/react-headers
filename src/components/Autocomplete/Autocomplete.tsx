@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 import { SearchInput } from "../../componentBlocks/SearchInput";
 import { SearchList } from "../../componentBlocks/SearchList";
-import { Wrapper } from "../../componentBlocks/Wrapper";
 
 import s from './Autocomplete.module.css';
 import { useOutsideClick } from "../../hooks/hooks";
@@ -41,11 +40,9 @@ export const Autocomplete = () => {
 	};
 
 	return (
-		<Wrapper>
-			<div className={s.root} ref={ref}>
-				<SearchInput handleInput={handleInput} />
-				<SearchList data={data} isActive={isActive} />
-			</div>
-		</Wrapper>
+		<div className={s.root} ref={ref}>
+			<SearchInput handleInput={handleInput} />
+			<SearchList data={data} isActive={isActive} />
+		</div>
 	)
 }

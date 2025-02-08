@@ -1,7 +1,6 @@
 import { SyntheticEvent, useRef, useState } from 'react';
 
 import { TestArray } from '../../types/types';
-import { Wrapper } from '../../componentBlocks/Wrapper';
 
 import { useOutsideClick } from '../../hooks/hooks';
 
@@ -48,32 +47,30 @@ export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 	const ref = useRef(null);
 
 	useOutsideClick(ref, () => setActive(false))
-	console.log(inputValue, 'inputValue')
+
 	return (
-		<Wrapper>
-			<div className={s.root} ref={ref}>
-				<input 
-					className={s.input}
-					value={inputValue}
-					onClick={clickInput}
-					onChange={handleInput}
-					placeholder="Dropdown"
-				/>
-				{isActive && (
-					<ul className={s.list}>
-						{newList?.map((element: TestArray) => 
-							<li
-								className={`${s.el} 
-									${selectedElements.includes(element.name) || element.name === inputValue 
-									? s.selected : ''}`}
-								onClick={() => elementListClick(element.name)} key={element.name}
-							>
-								{element.name}
-							</li>
-						)}
-					</ul>
-				)}
-			</div>
-		</Wrapper>
+		<div className={s.root} ref={ref}>
+			<input 
+				className={s.input}
+				value={inputValue}
+				onClick={clickInput}
+				onChange={handleInput}
+				placeholder="Dropdown"
+			/>
+			{isActive && (
+				<ul className={s.list}>
+					{newList?.map((element: TestArray) => 
+						<li
+							className={`${s.el} 
+								${selectedElements.includes(element.name) || element.name === inputValue 
+								? s.selected : ''}`}
+							onClick={() => elementListClick(element.name)} key={element.name}
+						>
+							{element.name}
+						</li>
+					)}
+				</ul>
+			)}
+		</div>
 	);
 };

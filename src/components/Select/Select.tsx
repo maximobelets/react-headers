@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import { Wrapper } from "../../componentBlocks/Wrapper";
-
 import { TestArray } from "../../types/types";
 
 import s from './Select.module.css';
@@ -24,27 +22,25 @@ export const Select = ({ list }: SelectProps) => {
 	}
 
 	return (
-		<Wrapper>
-			<div className={s.root}>
-				<input
-					value={activeValue}
-					onClick={handleSelect}
-					className={s.input}
-				/>
-				{isOpen && (
-					<ul className={s.list}>
-						{list?.map((item) =>
-							<li
-								onClick={(): void => changeValue(item.name)}
-								className={s.item}
-								key={item.name}
-							>
-								{item.name}
-							</li>
-						)}
-					</ul>
-				)}
-			</div>
-		</Wrapper>
+		<div className={s.root}>
+			<input
+				value={activeValue}
+				onClick={handleSelect}
+				className={s.input}
+			/>
+			{isOpen && (
+				<ul className={s.list}>
+					{list?.map((item) =>
+						<li
+							onClick={(): void => changeValue(item.name)}
+							className={s.item}
+							key={item.name}
+						>
+							{item.name}
+						</li>
+					)}
+				</ul>
+			)}
+		</div>
 	)
 }
