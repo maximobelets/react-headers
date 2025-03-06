@@ -1,13 +1,14 @@
 .root {
 	display: flex;
 	justify-content: end;
-	max-width: 500px;
-	margin: 30px auto;
+	width: 20%;
+	margin: auto;
 }
 
 .linksList {
 	list-style: none;
     display: flex;
+	flex-direction: column;
     justify-content: space-between;
     width: 100%;
 

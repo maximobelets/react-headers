@@ -19,23 +19,25 @@ import s from './App.module.css';
 const App = () => {
 	return (
 		<Router>
-			<Nav links={navConfig} />
-			<section className={s.root}>
-				<div>
-					<h1 className={s.title}>
-						React Components Project
-					</h1>
-				</div>
-			</section>
-			<Routes>
-				<Route path='/button' element={<Button />} />
-				<Route path='/dropdown' element={<Dropdown list={testArray} />} />
-				<Route path='/header' element={<Header />} />
-				<Route path='/autocomplete' element={<Autocomplete />} />
-				<Route path='/form' element={<Form />} />
-				<Route path='/multiselect' element={<Multiselect />} />
-				<Route path='/select' element={<Select list={testArray} />} />
-			</Routes>
+			<div className={s.root}>
+				<Nav links={navConfig} />
+				<section className={s.content}>
+					<div>
+						<h1 className={s.title}>
+							React Components Project
+						</h1>
+					</div>
+					<Routes>
+						<Route path='/button' element={<Button />} />
+						<Route path='/dropdown' element={<Dropdown list={testArray} />} />
+						<Route path='/header' element={<Header />} />
+						<Route path='/autocomplete' element={<Autocomplete />} />
+						<Route path='/form' element={<Form />} />
+						<Route path='/multiselect' element={<Multiselect />} />
+						<Route path='/select' element={<Select list={testArray} />} />
+					</Routes>
+				</section>
+			</div>
 		</Router>
 	);
 };
