@@ -20,13 +20,13 @@ const App = () => {
 	return (
 		<Router>
 			<div className={s.root}>
-				<Nav links={navConfig} />
+				<div className={s.nav}>
+					<h1 className={s.title}>
+						React Components Project
+					</h1>
+					<Nav links={navConfig} />
+				</div>
 				<section className={s.content}>
-					<div>
-						<h1 className={s.title}>
-							React Components Project
-						</h1>
-					</div>
 					<Routes>
 						<Route path='/button' element={<Button />} />
 						<Route path='/dropdown' element={<Dropdown list={testArray} />} />
