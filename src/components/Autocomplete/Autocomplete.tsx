@@ -3,15 +3,16 @@ import { useEffect, useRef, useState } from "react";
 import { SearchInput } from "../../componentBlocks/SearchInput";
 import { SearchList } from "../../componentBlocks/SearchList";
 
-import s from './Autocomplete.module.css';
 import { useOutsideClick } from "../../hooks/hooks";
+
+import s from './Autocomplete.module.css';
 
 export const Autocomplete = () => {
 	const [data, setData] = useState([]);
 	const [filterData, setFilterData] = useState(data)
 	const [isActive, setIsActive] = useState(false);
 
-	const ref = useRef(null);
+	const ref: React.MutableRefObject<HTMLDivElement> = useRef(null);
 
 	useOutsideClick(ref, () => setIsActive(false))
 

@@ -44,9 +44,9 @@ export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 		}
 	}
 
-	const ref = useRef(null);
+	const ref: React.MutableRefObject<HTMLDivElement> = useRef(null);
 
-	useOutsideClick(ref, () => setActive(false))
+	useOutsideClick(ref, (): void => setActive(false))
 
 	return (
 		<div className={s.root} ref={ref}>
