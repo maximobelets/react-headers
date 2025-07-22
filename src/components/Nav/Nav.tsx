@@ -22,11 +22,10 @@ export const Nav = ({ links }: NavProps) => {
 		<nav className={cn(s.root, mobileMenu && s.mobileNav  )}>
 			<ul className={cn(s.linksList, mobileMenu && s.linksListMobile)}>
 				{links.map((link: Path) => (
-					<li>
+					<li key={link.path}>
 						<NavLink
 							to={link.path}
 							className={s.link}
-							key={link.path}
 							onClick={(): void => mobileMenu && handleMobileMenu()}
 						>
 							{link.title}
