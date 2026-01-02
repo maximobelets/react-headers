@@ -7,3 +7,7 @@ export interface Path {
 	exact: boolean,
 	title: string,
 }
+
+export interface ISearchListItem {
+	name: string,
+};
