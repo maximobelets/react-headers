@@ -9,7 +9,6 @@ interface SearchListProps {
 }
 
 export const SearchList = ({data, isActive}: SearchListProps) => {
-	console.log(data, 'data')
 	return (
 		<ul className={`${s.root} ${isActive && s.active}`}>
 			{data.map((el: ISearchListItem) => (
