@@ -64,7 +64,8 @@ export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 							className={`${s.el} 
 								${selectedElements.includes(element.name) || element.name === inputValue 
 								? s.selected : ''}`}
-							onClick={() => elementListClick(element.name)} key={element.name}
+							onClick={() => elementListClick(element.name)}
+							key={element.name}
 						>
 							{element.name}
 						</li>

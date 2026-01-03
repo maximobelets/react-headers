@@ -4,6 +4,7 @@ import { SearchInput } from "../../componentBlocks/SearchInput";
 import { SearchList } from "../../componentBlocks/SearchList";
 
 import { useOutsideClick } from "../../hooks/hooks";
+import { ISearchListItem } from "../../types/types";
 
 import s from './Autocomplete.module.css';
 
@@ -25,7 +26,7 @@ export const Autocomplete = () => {
 
 	const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const {value} = event.currentTarget;
-		const filterArray = data.filter((el: any) => el.name.toLowerCase().includes(value));
+		const filterArray = data.filter((el: ISearchListItem) => el.name.toLowerCase().includes(value));
 
 		setData(filterArray);
 		setIsActive(true);

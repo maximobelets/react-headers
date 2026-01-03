@@ -1,4 +1,4 @@
-import { SyntheticEvent } from "react";
+import React, { SyntheticEvent, useState } from "react";
 
 import { Label } from "../../componentBlocks/Label";
 import { SearchInput } from "../../componentBlocks/SearchInput";
@@ -7,20 +7,30 @@ import { Button } from "../Button";
 import s from './Form.module.css';
 
 export const Form = () => {
-	const handleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
+	const [name, setName] = useState('');
+	const [secondName, setSecondName] = useState('');
 
+	const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
+		return setName(e.target.value)
+	}
+
+	const handleSecondName = (e: React.ChangeEvent<HTMLInputElement>) => {
+		return setSecondName(e.target.value)
+	}
+
+	const handleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
 		event.preventDefault();
 	};
 
 	return (
 		<form className={s.root} onSubmit={handleSubmit}>
 			<Label>
-				Label
-				<SearchInput placeholder={'First value'} type='text'/>
+				Name
+				<SearchInput placeholder={'First value'} type='text' handleInput={handleName} name={name} />
 			</Label>
 			<Label>
-				Label
-				<SearchInput placeholder={'Second value'} type='text'/>
+				Second Name
+				<SearchInput placeholder={'Second value'} type='text' handleInput={handleSecondName} name={secondName} />
 			</Label>
 			<Button
 				type="submit"
