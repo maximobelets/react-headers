@@ -1,18 +1,18 @@
 import { SearchListItem } from "../SearchListItem";
-import { ISearchListItem } from "../../types/types";
 
 import s from './SearchList.module.css';
 
 interface SearchListProps {
-	data: any,
+	data: Array<string>,
 	isActive: boolean,
 }
 
 export const SearchList = ({data, isActive}: SearchListProps) => {
+
 	return (
 		<ul className={`${s.root} ${isActive && s.active}`}>
-			{data.map((el: ISearchListItem) => (
-				<SearchListItem name={el.name} key={el.name} />
+			{data.map((el: string) => (
+				<SearchListItem name={el} key={el} />
 			))}
 		</ul>
 	)

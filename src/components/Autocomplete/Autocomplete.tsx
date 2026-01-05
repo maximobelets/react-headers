@@ -4,7 +4,6 @@ import { SearchInput } from "../../componentBlocks/SearchInput";
 import { SearchList } from "../../componentBlocks/SearchList";
 
 import { useOutsideClick } from "../../hooks/hooks";
-import { ISearchListItem } from "../../types/types";
 
 import s from './Autocomplete.module.css';
 
@@ -20,13 +19,16 @@ export const Autocomplete = () => {
 	useEffect(() => {
 		fetch('https://jsonplaceholder.typicode.com/users')
 			.then(response => response.json())
-			.then(response => {setData(response); setFilterData(response)})
+			.then(response => {
+				setData(response.map((user => user.name)));
+				setFilterData(response.map((user => user.name)));
+			})
 			.catch(error => console.log(error))
 	}, []);
 
 	const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const {value} = event.currentTarget;
-		const filterArray = data.filter((el: ISearchListItem) => el.name.toLowerCase().includes(value));
+		const filterArray = data.filter((el: string) => el.toLowerCase().includes(value));
 
 		setData(filterArray);
 		setIsActive(true);

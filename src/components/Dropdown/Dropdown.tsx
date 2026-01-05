@@ -32,7 +32,7 @@ export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 		}
 	}
 
-	const elementListClick = (data: any) => {
+	const elementListClick = (data: string) => {
 		setInputValue(data);
 
 		if (multiselect) {
