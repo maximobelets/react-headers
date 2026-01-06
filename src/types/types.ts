@@ -10,4 +10,5 @@ export interface Path {
 
 export interface ISearchListItem {
 	name: string,
+	onClick: (item) => void,
 };

@@ -11,6 +11,7 @@ export const Autocomplete = () => {
 	const [data, setData] = useState([]);
 	const [filterData, setFilterData] = useState(data)
 	const [isActive, setIsActive] = useState(false);
+	const [currentValue, setCurrentValue] = useState('');
 
 	const ref: React.MutableRefObject<HTMLDivElement> = useRef(null);
 
@@ -27,11 +28,12 @@ export const Autocomplete = () => {
 	}, []);
 
 	const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const {value} = event.currentTarget;
+		const { value } = event.currentTarget;
 		const filterArray = data.filter((el: string) => el.toLowerCase().includes(value));
 
 		setData(filterArray);
 		setIsActive(true);
+		setCurrentValue(value)
 
 		if (value === '') {
 			setData(filterData)
@@ -43,10 +45,14 @@ export const Autocomplete = () => {
 		}
 	};
 
+	const handleItemClick = (item) => {
+		setCurrentValue(item)
+	}
+
 	return (
 		<div className={s.root} ref={ref}>
-			<SearchInput handleInput={handleInput} />
-			<SearchList data={data} isActive={isActive} />
+			<SearchInput handleInput={handleInput} value={currentValue} />
+			<SearchList data={data} isActive={isActive} onClick={handleItemClick} />
 		</div>
 	)
 }
