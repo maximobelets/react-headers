@@ -8,6 +8,7 @@ import { Autocomplete } from './components/Autocomplete';
 import { Form } from './components/Form';
 import { Multiselect } from './components/Multiselect';
 import { Select } from './components/Select';
+import { Main } from './components/Main';
 
 import { navConfig } from './utils/configs';
 import { testArray } from './constants/constants';
@@ -28,6 +29,7 @@ const App = () => {
 				</div>
 				<section className={s.content}>
 					<Routes>
+						<Route path='/' element={<Main />} />
 						<Route path='/button' element={<Button />} />
 						<Route path='/dropdown' element={<Dropdown list={testArray} />} />
 						<Route path='/header' element={<Header />} />
