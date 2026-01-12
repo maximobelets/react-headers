@@ -6,11 +6,12 @@ interface ButtonProps {
 	children?: React.ReactNode;
 	type?: 'submit' | 'reset' | 'button';
 	onClick?: () => void;
+	variant?: 'standard' | 'outline' | 'cancel'
 }
 
-export const Button = ({ children = 'Click Me!', type, onClick }: ButtonProps) => {
+export const Button = ({ children = 'Click Me!', type = 'button', onClick, variant = 'standard' }: ButtonProps) => {
 	return (
-		<button className={s.root} type={type} onClick={onClick}>
+		<button className={`${s.root} ${s[variant]}`} type={type} onClick={onClick}>
 			{children}
 		</button>
 	)

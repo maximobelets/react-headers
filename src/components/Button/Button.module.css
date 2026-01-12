@@ -11,3 +11,15 @@
 		background-color: var(--third-color);
 	}
 }
+
+.standard {
+
+}
+
+.outline {
+	border: 1px solid var(--second-color);
+}
+
+.cancel {
+	background-color: var(--fourth-color);
+}
