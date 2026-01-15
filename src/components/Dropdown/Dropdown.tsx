@@ -12,7 +12,6 @@ interface DropdownProps {
 };
 
 export const Dropdown = ({ list, multiselect }: DropdownProps) => {
-	const [newList, setNewList] = useState(list);
 	const [isActive, setActive] = useState(false);
 	const [inputValue, setInputValue] = useState('');
 	const [selectedElements, setSelectedElements] = useState<string[]>([]);
@@ -21,7 +20,6 @@ export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 		const {value} = event.currentTarget;
 
 		setInputValue(value);
-		setNewList(newList?.filter(el => el.name.includes(value)));
 	};
 
 	const clickInput = () => {
@@ -34,6 +32,7 @@ export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 
 	const elementListClick = (data: string) => {
 		setInputValue(data);
+		setActive(!isActive);
 
 		if (multiselect) {
 			setSelectedElements([...selectedElements, data]);
@@ -59,7 +58,7 @@ export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 			/>
 			{isActive && (
 				<ul className={s.list}>
-					{newList?.map((element: TestArray) => 
+					{list?.map((element: TestArray) => 
 						<li
 							className={`${s.el} 
 								${selectedElements.includes(element.name) || element.name === inputValue 
