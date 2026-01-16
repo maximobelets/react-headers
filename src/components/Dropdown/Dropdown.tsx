@@ -1,4 +1,4 @@
-import { SyntheticEvent, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { TestArray } from '../../types/types';
 
@@ -13,25 +13,15 @@ interface DropdownProps {
 
 export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 	const [isActive, setActive] = useState(false);
-	const [inputValue, setInputValue] = useState('');
+	const [value, setValue] = useState('');
 	const [selectedElements, setSelectedElements] = useState<string[]>([]);
-
-	const handleInput = (event: SyntheticEvent<HTMLInputElement>) => {
-		const {value} = event.currentTarget;
-
-		setInputValue(value);
-	};
 
 	const clickInput = () => {
 		setActive(!isActive);
-
-		if (isActive) {
-			setInputValue('')
-		}
 	}
 
 	const elementListClick = (data: string) => {
-		setInputValue(data);
+		setValue(data);
 		setActive(!isActive);
 
 		if (multiselect) {
@@ -49,19 +39,18 @@ export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 
 	return (
 		<div className={s.root} ref={ref}>
-			<input 
-				className={s.input}
-				value={inputValue}
+			<div 
+				className={s.value}
 				onClick={clickInput}
-				onChange={handleInput}
-				placeholder="Dropdown"
-			/>
+			>
+				{value}
+			</div>
 			{isActive && (
 				<ul className={s.list}>
 					{list?.map((element: TestArray) => 
 						<li
 							className={`${s.el} 
-								${selectedElements.includes(element.name) || element.name === inputValue 
+								${selectedElements.includes(element.name) || element.name === value 
 								? s.selected : ''}`}
 							onClick={() => elementListClick(element.name)}
 							key={element.name}
