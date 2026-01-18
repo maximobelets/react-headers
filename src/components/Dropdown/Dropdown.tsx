@@ -8,13 +8,11 @@ import s from './Dropdown.module.css';
 
 interface DropdownProps {
 	list?: Array<TestArray>,
-	multiselect?: boolean,
 };
 
-export const Dropdown = ({ list, multiselect }: DropdownProps) => {
+export const Dropdown = ({ list }: DropdownProps) => {
 	const [isActive, setActive] = useState(false);
 	const [value, setValue] = useState('');
-	const [selectedElements, setSelectedElements] = useState<string[]>([]);
 
 	const clickInput = () => {
 		setActive(!isActive);
@@ -23,14 +21,6 @@ export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 	const elementListClick = (data: string) => {
 		setValue(data);
 		setActive(!isActive);
-
-		if (multiselect) {
-			setSelectedElements([...selectedElements, data]);
-
-			if (selectedElements.includes(data)) {
-				setSelectedElements([...selectedElements.filter(element => element !== data)])
-			}
-		}
 	}
 
 	const ref: React.MutableRefObject<HTMLDivElement> = useRef(null);
@@ -50,8 +40,7 @@ export const Dropdown = ({ list, multiselect }: DropdownProps) => {
 					{list?.map((element: TestArray) => 
 						<li
 							className={`${s.el} 
-								${selectedElements.includes(element.name) || element.name === value 
-								? s.selected : ''}`}
+								${element.name === value && s.selected}`}
 							onClick={() => elementListClick(element.name)}
 							key={element.name}
 						>

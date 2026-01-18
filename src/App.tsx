@@ -35,7 +35,7 @@ const App = () => {
 						<Route path='/header' element={<Header />} />
 						<Route path='/autocomplete' element={<Autocomplete />} />
 						<Route path='/form' element={<Form />} />
-						<Route path='/multiselect' element={<Multiselect />} />
+						<Route path='/multiselect' element={<Multiselect list={testArray} />} />
 						<Route path='/select' element={<Select list={testArray} />} />
 					</Routes>
 				</section>
