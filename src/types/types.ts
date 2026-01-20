@@ -15,5 +15,6 @@ export interface ISearchListItem {
 
 export interface ISelectItem {
 	name: string,
+	key: string,
 	onClick?: (item) => void,
 };

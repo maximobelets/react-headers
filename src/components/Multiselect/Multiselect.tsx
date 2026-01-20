@@ -44,7 +44,7 @@ export const Multiselect = ({ list }: MultiselectProps) => {
 			>
 				{selectedElements.map((element) => {
 					return (
-						<SelectItem name={element} onClick={deleteItem} />
+						<SelectItem name={element} onClick={deleteItem} key={element} />
 					)
 				})}
 			</div>

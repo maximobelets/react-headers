@@ -6,7 +6,7 @@ import s from './SelectItem.module.css';
 
 export const SelectItem = ({ name, onClick }: ISelectItem) => {
 	return (
-		<span className={s.root} onClick={() => onClick(name)}>
+		<span className={s.root} onClick={() => onClick(name)} key={name}>
 			{name}
             <img
 				src={crossIcon}
