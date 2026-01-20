@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react';
 
+import { SelectItem } from '../../componentBlocks/SelectItem';
+
 import { TestArray } from '../../types/types';
 
 import { useOutsideClick } from '../../hooks/hooks';
@@ -28,6 +30,8 @@ export const Multiselect = ({ list }: MultiselectProps) => {
 		}
 	}
 
+	const deleteItem = (selectedItem) => setSelectedElements(selectedElements.filter(item => item !== selectedItem));
+
 	const ref: React.MutableRefObject<HTMLDivElement> = useRef(null);
 
 	useOutsideClick(ref, (): void => setActive(false))
@@ -38,7 +42,11 @@ export const Multiselect = ({ list }: MultiselectProps) => {
 				className={s.value}
 				onClick={clickInput}
 			>
-				{selectedElements.map((element) => element)}
+				{selectedElements.map((element) => {
+					return (
+						<SelectItem name={element} onClick={deleteItem} />
+					)
+				})}
 			</div>
 			{isActive && (
 				<ul className={s.list}>
