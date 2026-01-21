@@ -6,13 +6,13 @@ import s from './SelectItem.module.css';
 
 export const SelectItem = ({ name, onClick }: ISelectItem) => {
 	return (
-		<span className={s.root} onClick={() => onClick(name)} key={name}>
+		<span className={s.root} key={name}>
 			{name}
             <img
 				src={crossIcon}
-				// alt={!mobileMenu ? 'Icon for open mobile menu' : 'Icon for close mobile menu'}
-				className={s.closeIcon}
-				// onClick={handleMobileMenu}
+				alt={'Icon for open delete select item'}
+				className={s.icon}
+				onClick={() => onClick(name)}
 			/>
 		</span>
 	)
