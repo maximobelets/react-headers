@@ -23,7 +23,7 @@ export const Dropdown = ({ list }: DropdownProps) => {
 		setActive(!isActive);
 	}
 
-	const ref: React.MutableRefObject<HTMLDivElement> = useRef(null);
+	const ref: React.RefObject<HTMLDivElement> = useRef(null);
 
 	useOutsideClick(ref, (): void => setActive(false))
 

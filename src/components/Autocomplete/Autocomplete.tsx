@@ -13,7 +13,7 @@ export const Autocomplete = () => {
 	const [isActive, setIsActive] = useState(false);
 	const [currentValue, setCurrentValue] = useState('');
 
-	const ref: React.MutableRefObject<HTMLDivElement> = useRef(null);
+	const ref: React.RefObject<HTMLDivElement> = useRef(null);
 
 	useOutsideClick(ref, () => setIsActive(false))
 
