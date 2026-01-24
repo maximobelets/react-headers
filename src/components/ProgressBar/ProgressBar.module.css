@@ -1,0 +1,13 @@
+.root {
+    width: 200px;
+    height: 20px;
+    background-color: var(--third-color);
+    border-radius: 20px;
+}
+
+.bar {
+    width: 30%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: green;
+}

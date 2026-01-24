@@ -9,6 +9,7 @@ import { Form } from './components/Form';
 import { Multiselect } from './components/Multiselect';
 import { Select } from './components/Select';
 import { Main } from './components/Main';
+import { ProgressBar } from './components/ProgressBar';
 
 import { navConfig } from './utils/configs';
 import { testArray } from './constants/constants';
@@ -37,6 +38,7 @@ const App = () => {
 						<Route path='/form' element={<Form />} />
 						<Route path='/multiselect' element={<Multiselect list={testArray} />} />
 						<Route path='/select' element={<Select list={testArray} />} />
+						<Route path='/progress-bar' element={<ProgressBar />} />
 					</Routes>
 				</section>
 			</div>
