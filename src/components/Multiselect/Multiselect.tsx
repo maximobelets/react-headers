@@ -52,7 +52,7 @@ export const Multiselect = ({ list }: MultiselectProps) => {
 				<ul className={s.list}>
 					{list?.map((element: TestArray) => 
 						<li
-							className={`${s.el} ${selectedElements.includes(element.name) && s.selected}`}
+							className={`${s.element} ${selectedElements.includes(element.name) && s.selected}`}
 							onClick={() => elementListClick(element.name)}
 							key={element.name}
 						>

@@ -31,8 +31,9 @@
 	position: absolute;
 }
 
-.el {
+.element {
 	padding: 6px;
+	cursor: pointer;
 
 	&:hover {
 		background-color: var(--third-color);
