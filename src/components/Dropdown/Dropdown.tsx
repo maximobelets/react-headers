@@ -39,7 +39,7 @@ export const Dropdown = ({ list }: DropdownProps) => {
 				<ul className={s.list}>
 					{list?.map((element: TestArray) => 
 						<li
-							className={`${s.el} 
+							className={`${s.element} 
 								${element.name === value && s.selected}`}
 							onClick={() => elementListClick(element.name)}
 							key={element.name}

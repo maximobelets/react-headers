@@ -33,7 +33,7 @@ export const Select = ({ list }: SelectProps) => {
 					{list?.map((item) =>
 						<li
 							onClick={(): void => changeValue(item.name)}
-							className={s.item}
+							className={s.element}
 							key={item.name}
 						>
 							{item.name}

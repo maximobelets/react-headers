@@ -31,7 +31,7 @@
 	position: absolute;
 }
 
-.el {
+.element {
 	padding: 6px;
 
 	&:hover {
