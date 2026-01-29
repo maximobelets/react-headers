@@ -5,12 +5,11 @@
 	margin: auto;
 }
 
-.linksList {
+.list {
 	list-style: none;
     display: flex;
 	flex-direction: column;
     justify-content: space-between;
-    width: 100%;
 
 	@media (max-width: 1024px) {
 		display: none;
@@ -18,7 +17,7 @@
 	}
 }
 
-.linksListMobile {
+.listMobile {
 	display: block;
 	margin: auto 0;
 }
