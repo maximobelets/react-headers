@@ -4,6 +4,9 @@ export const Main = () => {
 	return (
 		<div className={s.root}>
 			React Components Library
+			<p>
+				Coming soon
+			</p>
 		</div>
 	)
 }
