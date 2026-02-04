@@ -41,9 +41,14 @@ export const navConfig: Path[] = [
         exact: true,
         title: 'Select',
     },
-        {
+    {
         path: '/progress-bar',
         exact: true,
         title: 'Progress bar',
+    },
+    {
+        path: '/theme-switcher',
+        exact: true,
+        title: 'Theme switcher',
     },
 ];
