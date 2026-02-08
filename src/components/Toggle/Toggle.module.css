@@ -1,0 +1,25 @@
+.root {
+  width: 50px;
+  height: 24px;
+  background: gray;
+  border-radius: 20px;
+  padding: 4px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.on {
+  background: green;
+}
+
+.thumb {
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 20px;
+  transition: transform 0.25s ease;
+}
+
+.on .thumb {
+  transform: translateX(24px);
+}

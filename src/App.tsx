@@ -18,6 +18,7 @@ import { testArray } from './constants/constants';
 import 'normalize.css';
 
 import s from './App.module.css';
+import { Toggle } from './components/Toggle';
 
 const App = () => {
 	return (
@@ -40,6 +41,7 @@ const App = () => {
 						<Route path='/multiselect' element={<Multiselect list={testArray} />} />
 						<Route path='/select' element={<Select list={testArray} />} />
 						<Route path='/progress-bar' element={<ProgressBar />} />
+						<Route path='/toggle' element={<Toggle />} />
 						<Route path='/theme-switcher' element={<ThemeSwitcher />} />
 					</Routes>
 				</section>

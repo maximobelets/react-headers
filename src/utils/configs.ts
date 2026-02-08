@@ -47,6 +47,11 @@ export const navConfig: Path[] = [
         title: 'Progress bar',
     },
     {
+        path: '/toggle',
+        exact: true,
+        title: 'Toggle',
+    },
+    {
         path: '/theme-switcher',
         exact: true,
         title: 'Theme switcher',
