@@ -13,7 +13,7 @@ export const Toggle = () => {
 			className={`${s.root} ${on && s.on}`}
 			onClick={() => setOn(!on)}
 		>
-			<div className={s.thumb} />
+			<div className={`${s.thumb} ${on && s.thumbAnimation}`} />
 		</div>
 	)
 };
