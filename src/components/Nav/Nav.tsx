@@ -22,7 +22,7 @@ export const Nav = ({ links }: NavProps) => {
 		<nav className={cn(s.root, mobileMenu && s.mobileNav  )}>
 			<ul className={cn(s.list, mobileMenu && s.listMobile)}>
 				{links.map((link: Path) => (
-					<li key={link.path}>
+					<li className={s.item} key={link.path}>
 						<NavLink
 							to={link.path}
 							className={s.link}
