@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 
-import { Button } from '../Button';
+import SunIcon from '../../assets/icons/sun-icon.svg?react';
 
 import s from './ThemeSwitcher.module.css';
 
-interface ThemeSwitcherProps {
-	// add later
-}
-
 export const ThemeSwitcher = () => {
-	const [theme, setTheme] = useState('light');
-
-	const changeTheme = () => setTheme(prevState => prevState === 'light' ? 'dark' : 'light');
+	const [on, setOn] = useState(false);
 
 	return (
-		<Button onClick={changeTheme}>
-			Theme is {theme}
-		</Button>
+		<div
+			className={`${s.root} ${on && s.on}`}
+			onClick={() => setOn(!on)}
+		>
+			<div className={`${s.thumb} ${on && s.thumbAnimation}`} />
+			<SunIcon />
+		</div>
 	)
 };

@@ -1,25 +1,25 @@
 .root {
-	padding: 10px 60px;
-	text-align: center;
-	border-radius: 10px;
-	outline: none;
-	cursor: pointer;
-	border: none;
-	transition: .5s;
-
-	&:hover {
-		background-color: var(--third-color);
-	}
+  width: 50px;
+  height: 24px;
+  background: gray;
+  border-radius: 20px;
+  padding: 4px;
+  cursor: pointer;
+  transition: background 0.25s ease;
 }
 
-.standard {
-
+.on {
+  background: green;
 }
 
-.outline {
-	border: 1px solid var(--second-color);
+.thumb {
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 20px;
+  transition: transform 0.25s ease;
 }
 
-.cancel {
-	background-color: var(--fourth-color);
+.thumbAnimation {
+  transform: translateX(24px);
 }
