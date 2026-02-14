@@ -1,5 +1,3 @@
-import React from "react";
-
 import s from './ProgressBar.module.css';
 
 export const ProgressBar = () => {

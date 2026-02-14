@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import SunIcon from '../../assets/icons/sun-icon.svg?react';
 import HalfMoonIcon from '../../assets/icons/half-moon-icon.svg?react';

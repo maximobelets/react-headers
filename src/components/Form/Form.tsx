@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from "react";
 
 import { Label } from "../../componentBlocks/Label";
 import { SearchInput } from "../../componentBlocks/SearchInput";
