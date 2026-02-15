@@ -1,6 +1,6 @@
 import { TestArray } from "../types/types";
 
-export const testArray: Array<TestArray> = [
+export const TEST_ARRAY: Array<TestArray> = [
 	{
 		name: 'One',
 	},
