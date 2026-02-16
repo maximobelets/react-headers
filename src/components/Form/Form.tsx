@@ -26,11 +26,23 @@ export const Form = () => {
 		<form className={s.root} onSubmit={handleSubmit}>
 			<Label>
 				Name
-				<SearchInput placeholder={'First value'} type='text' handleInput={handleName} name={name} />
+				<SearchInput
+					placeholder={'First value'}
+					type='text'
+					handleInput={handleName}
+					name='firstName'
+					value={name}
+				/>
 			</Label>
 			<Label>
 				Second Name
-				<SearchInput placeholder={'Second value'} type='text' handleInput={handleSecondName} name={secondName} />
+				<SearchInput
+					placeholder={'Second value'}
+					type='text'
+					handleInput={handleSecondName}
+					name='secondName'
+					value={secondName}
+				/>
 			</Label>
 			<Button
 				type="submit"
