@@ -1,14 +1,15 @@
+import { LabelHTMLAttributes } from 'react';
 import s from './Label.module.css';
 
-interface LabelProps {
-	htmlFor?: string;
-	children?: React.ReactNode;
-}
+// interface LabelProps {
+// 	htmlFor?: string;
+// 	children?: React.ReactNode;
+// }
 
-export const Label = ({htmlFor, children}: LabelProps) => {
+type LabelProps = LabelHTMLAttributes<HTMLLabelElement>;
+
+export const Label = ({ ...props }: LabelProps) => {
 	return (
-		<label className={s.root} htmlFor={htmlFor}>
-			{children}
-		</label>
+		<label className={s.root} {...props} />
 	)
 }
