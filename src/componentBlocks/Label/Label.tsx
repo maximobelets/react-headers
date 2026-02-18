@@ -1,4 +1,5 @@
 import { LabelHTMLAttributes } from 'react';
+
 import s from './Label.module.css';
 
 type LabelProps = LabelHTMLAttributes<HTMLLabelElement>;

@@ -29,7 +29,7 @@ export const Form = () => {
 				<SearchInput
 					placeholder={'First value'}
 					type='text'
-					handleInput={handleName}
+					onChange={handleName}
 					name='firstName'
 					value={name}
 				/>
@@ -39,7 +39,7 @@ export const Form = () => {
 				<SearchInput
 					placeholder={'Second value'}
 					type='text'
-					handleInput={handleSecondName}
+					onChange={handleSecondName}
 					name='secondName'
 					value={secondName}
 				/>
