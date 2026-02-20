@@ -3,9 +3,11 @@ import { ISearchListItem } from '../../types/types';
 import s from './SearchListItem.module.css';
 
 export const SearchListItem = ({ name, onClick }: ISearchListItem) => {
+	const handleClick = () => onClick(name);
+
 	return (
-		<h1 className={s.root} onClick={() => onClick(name)}>
+		<li className={s.root} onClick={handleClick}>
 			{name}
-		</h1>
+		</li>
 	)
 }
