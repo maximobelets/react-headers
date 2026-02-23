@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import cn from "classnames";
 
-import { NavLink } from "react-router-dom";
 import { Path } from "../../types/types";
 
 import menuIcon from './assets/menu.svg';
@@ -14,14 +14,20 @@ interface NavProps {
 }
 
 export const Nav = ({ links }: NavProps) => {
+	const { pathname } = useLocation();
+
 	const [mobileMenu, setMobileMenu] = useState(false);
 
 	const handleMobileMenu = () => setMobileMenu(prevState => !prevState);
 
+	useEffect(() => {
+		setMobileMenu(false);
+	}, [pathname])
+
 	return (
 		<nav className={cn(s.root, mobileMenu && s.mobileNav  )}>
 			<ul className={cn(s.list, mobileMenu && s.listMobile)}>
-				{links.map((link: Path) => (
+				{links.map((link) => (
 					<li className={s.item} key={link.path}>
 						<NavLink
 							to={link.path}
