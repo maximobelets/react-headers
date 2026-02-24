@@ -40,7 +40,7 @@ const App = () => {
 						<Route path='/form' element={<Form />} />
 						<Route path='/multiselect' element={<Multiselect list={TEST_ARRAY} />} />
 						<Route path='/select' element={<Select list={TEST_ARRAY} />} />
-						<Route path='/progress-bar' element={<ProgressBar />} />
+						<Route path='/progress-bar' element={<ProgressBar value={70} />} />
 						<Route path='/toggle' element={<Toggle />} />
 						<Route path='/theme-switcher' element={<ThemeSwitcher />} />
 					</Routes>
