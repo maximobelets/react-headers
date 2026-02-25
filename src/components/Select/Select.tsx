@@ -5,10 +5,10 @@ import { TestArray } from "../../types/types";
 import s from './Select.module.css';
 
 interface SelectProps {
-	list?: Array<TestArray>
+	list?: TestArray[]
 }
 
-export const Select = ({ list }: SelectProps) => {
+export const Select = ({ list = [] }: SelectProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [activeValue, setActiveValue] = useState('');
 
@@ -27,6 +27,7 @@ export const Select = ({ list }: SelectProps) => {
 				value={activeValue}
 				onClick={handleSelect}
 				className={s.input}
+				readOnly
 			/>
 			{isOpen && (
 				<ul className={s.list}>
