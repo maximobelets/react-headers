@@ -30,9 +30,9 @@ export const Multiselect = ({ list }: MultiselectProps) => {
 		}
 	}
 
-	const deleteItem = (selectedItem) => setSelectedElements(selectedElements.filter(item => item !== selectedItem));
+	const deleteItem = (selectedItem: string) => setSelectedElements(selectedElements.filter(item => item !== selectedItem));
 
-	const ref: React.RefObject<HTMLDivElement> = useRef(null);
+	const ref = useRef<HTMLDivElement>(null);
 
 	useOutsideClick(ref, (): void => setActive(false))
 

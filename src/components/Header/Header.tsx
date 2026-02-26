@@ -11,7 +11,7 @@ export const Header = ({
 		title = 'Title',
 		backgroundColor = 'gray',
 		color = '#000',
-		children = 'Text'
+		children,
 	}: HeaderProps ) => {
 
 	return (
