@@ -15,15 +15,15 @@ export const Dropdown = ({ list }: DropdownProps) => {
 	const [value, setValue] = useState('');
 
 	const clickInput = () => {
-		setActive(!isActive);
+		setActive(prevState => !prevState);
 	}
 
 	const elementListClick = (data: string) => {
 		setValue(data);
-		setActive(!isActive);
+		setActive(false);
 	}
 
-	const ref: React.RefObject<HTMLDivElement> = useRef(null);
+	const ref = useRef<HTMLDivElement>(null);
 
 	useOutsideClick(ref, (): void => setActive(false))
 
