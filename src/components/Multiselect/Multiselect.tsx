@@ -20,14 +20,12 @@ export const Multiselect = ({ list }: MultiselectProps) => {
 		setActive(!isActive);
 	}
 
-	const elementListClick = (data: string) => {
-		setActive(!isActive);
-
-		setSelectedElements([...selectedElements, data]);
-
-		if (selectedElements.includes(data)) {
-			setSelectedElements([...selectedElements.filter(element => element !== data)])
-		}
+	const elementListClick = (name: string) => {
+		setSelectedElements(prevState =>
+			prevState.includes(name)
+				? prevState.filter(item => item !== name)
+				: [...prevState, name]
+		);
 	}
 
 	const deleteItem = (selectedItem: string) => setSelectedElements(selectedElements.filter(item => item !== selectedItem));
