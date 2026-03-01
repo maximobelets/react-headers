@@ -47,6 +47,11 @@ export const navConfig: Path[] = [
         title: 'Progress bar',
     },
     {
+        path: '/spinner',
+        exact: true,
+        title: 'Spinner',
+    },
+    {
         path: '/toggle',
         exact: true,
         title: 'Toggle',

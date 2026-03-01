@@ -10,6 +10,7 @@ import { Multiselect } from './components/Multiselect';
 import { Select } from './components/Select';
 import { Main } from './components/Main';
 import { ProgressBar } from './components/ProgressBar';
+import { Spinner } from './components/Spinner';
 import { ThemeSwitcher } from './components/ThemeSwitcher';
 import { Toggle } from './components/Toggle';
 
@@ -41,6 +42,7 @@ const App = () => {
 						<Route path='/multiselect' element={<Multiselect list={TEST_ARRAY} />} />
 						<Route path='/select' element={<Select list={TEST_ARRAY} />} />
 						<Route path='/progress-bar' element={<ProgressBar value={70} />} />
+						<Route path='/spinner' element={<Spinner />} />
 						<Route path='/toggle' element={<Toggle />} />
 						<Route path='/theme-switcher' element={<ThemeSwitcher />} />
 					</Routes>
