@@ -37,7 +37,7 @@ export const Dropdown = ({ list }: DropdownProps) => {
 			</div>
 			{isActive && (
 				<ul className={s.list}>
-					{list?.map((element: TestArray) => 
+					{list?.map((element) => 
 						<li
 							className={`${s.element} 
 								${element.name === value && s.selected}`}
