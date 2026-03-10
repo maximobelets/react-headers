@@ -29,7 +29,7 @@ export const Autocomplete = () => {
 
 	const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { value } = event.currentTarget;
-		const filterArray = data.filter((el: string) => el.toLowerCase().includes(value));
+		const filterArray = data.filter((element: string) => element.toLowerCase().includes(value));
 
 		setData(filterArray);
 		setIsActive(true);

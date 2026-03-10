@@ -8,11 +8,6 @@ export interface Path {
 	title: string,
 }
 
-export interface ISearchListItem {
-	name: string,
-	onClick: (item) => void,
-};
-
 export interface ISelectItem {
 	name: string,
 	key: string,
