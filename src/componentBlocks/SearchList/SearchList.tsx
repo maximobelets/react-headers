@@ -1,5 +1,3 @@
-import { ListItem } from "../ListItem";
-
 import s from './SearchList.module.css';
 
 interface SearchListProps {
@@ -12,9 +10,9 @@ interface SearchListProps {
 export const SearchList = ({ data, isActive, onClick, className }: SearchListProps) => {
 	return (
 		<ul className={`${s.root} ${isActive && s.active} ${className}`}>
-			{data.map((el: string, index: number) => (
-				<li onClick={() => onClick(el)} key={`${el} - ${index}`}>
-					{el}
+			{data.map((element: string, index: number) => (
+				<li onClick={() => onClick(element)} key={`${element} - ${index}`}>
+					{element}
 				</li>
 			))}
 		</ul>
