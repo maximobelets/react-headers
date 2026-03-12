@@ -1,17 +1,21 @@
+import { HTMLAttributes } from 'react';
+
 import s from './SearchList.module.css';
 
-interface SearchListProps {
+interface SearchListProps extends HTMLAttributes<HTMLUListElement> {
 	data: Array<string>,
 	isActive: boolean,
-	onClick: (item: string) => void
 	className?: string,
+	onElementSelect: (value: string) => void
 }
 
-export const SearchList = ({ data, isActive, onClick, className }: SearchListProps) => {
+export const SearchList = ({ isActive, data, className, onElementSelect, ...props }: SearchListProps) => {
 	return (
-		<ul className={`${s.root} ${isActive && s.active} ${className}`}>
+		<ul className={`${s.root} ${isActive && s.active} ${className}`}
+			{ ...props }
+		>
 			{data.map((element: string, index: number) => (
-				<li onClick={() => onClick(element)} key={`${element} - ${index}`}>
+				<li onClick={() => onElementSelect(element)} key={`${element} - ${index}`}>
 					{element}
 				</li>
 			))}
