@@ -34,7 +34,7 @@ const App = () => {
 				<section className={s.content}>
 					<Routes>
 						<Route path='/' element={<Main />} />
-						<Route path='/button' element={<Button />} />
+						<Route path='/button' element={<Button children={'Button'} />} />
 						<Route path='/dropdown' element={<Dropdown list={TEST_ARRAY} />} />
 						<Route path='/header' element={<Header />} />
 						<Route path='/autocomplete' element={<Autocomplete />} />
