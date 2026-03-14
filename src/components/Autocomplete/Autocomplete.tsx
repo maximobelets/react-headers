@@ -52,7 +52,7 @@ export const Autocomplete = () => {
 	return (
 		<div className={s.root} ref={ref}>
 			<SearchInput onChange={handleInput} value={currentValue} />
-			<SearchList data={data} isActive={isActive} onClick={handleItemClick} className={s.list} />
+			<SearchList data={data} isActive={isActive} onElementSelect={handleItemClick} className={s.list} />
 		</div>
 	)
 }
